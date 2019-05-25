@@ -1,0 +1,95 @@
+%%
+%% Package : eqarrays.sty
+%% 
+
+%
+% Declarations
+%
+
+\def\fileversion{v1.0}
+\def\filedate{24/11/2003}
+
+\ProvidesPackage{eqarrays}[\filedate\space\fileversion\space Special kinds of arrays]
+\typeout{Package: `eqarrays' \fileversion\space\space <\filedate> }
+
+%
+% Eqarrays.tex
+%
+% This file contains an environment similar to eqnarray*, but which allows
+% 4 fields. The last one is a `comment' field which is typeset in horizon-
+% tal mode. The 'lparrays' environment is similar and used for linear
+% programming. The first field contains text. The 'fivearrays' environment
+% does the same for equations of the form ax+by = c.
+%
+% Date : 17-Dec-1990
+% Last Updated: 24-Nov-2003
+%
+
+\catcode`@=11
+\def\@beqarrays{%
+   \def\@eqncr{\nonumber\@seqncr}
+   \stepcounter{equation}%
+   \def\@currentlabel{\p@equation\theequation}%
+   \global\@eqnswtrue
+   \m@th
+   \global\@eqcnt\z@
+   \tabskip\@centering
+   \let\\\@eqncr
+   $$\everycr{}\halign to\displaywidth\bgroup
+       \hskip\@centering$\displaystyle\tabskip\z@skip{##}$\@eqnsel
+      &\global\@eqcnt\@ne\hskip \tw@\arraycolsep \hfil${##}$\hfil
+      &\global\@eqcnt\tw@ \hskip \tw@\arraycolsep
+         $\displaystyle{##}$\hfil\tabskip\@centering
+      &\global\@eqcnt\tw@ \hskip \tw@\arraycolsep
+         {##}\hfil\tabskip\@centering
+      &\global\@eqcnt\thr@@ \hb@xt@\z@\bgroup\hss##\egroup
+         \tabskip\z@skip
+      \cr
+}
+\def\@eeqarrays{\nonumber\endeqnarray}
+%\def\@beqarrays{\displaymath\openup1\jot
+%                \halign\bgroup
+%                \hskip0.05\linewidth\hfil$\displaystyle{##}$&
+%                \hskip\arraycolsep\hfil$\displaystyle{##}$\hfil&
+%                \hskip\arraycolsep$\displaystyle{##}$\hfil&
+%                \qquad\textrm{##}\hfil\cr
+%}
+\def\@beqfarrays{\displaymath\openup1\jot
+                \halign\bgroup
+                \hskip0.05\linewidth\hfil$\displaystyle{##}$&
+                \hskip\arraycolsep\hfil$\displaystyle{##}$\hfil&
+                \hskip\arraycolsep$\displaystyle{##}$\hfil&
+                \hskip\arraycolsep$\displaystyle{##}$\hfil\cr
+}
+\def\@blparrays{\displaymath\openup1\jot
+                \halign\bgroup
+                \hskip0.05\linewidth\rm{##}\hfil&
+                \hskip\arraycolsep\hfil$\displaystyle{##}$&
+                \hskip\arraycolsep\hfil$\displaystyle{##}$\hfil&
+                \hskip\arraycolsep$\displaystyle{##}$\hfil&
+                \qquad\rm{##}\hfil\cr
+}
+%\def\@eeqarrays{\egroup\enddisplaymath}
+
+\def\@threearray{\stepcounter{equation}\let\@currentlabel=\theequation
+\global\@eqnswtrue\global\@eqcnt\z@\tabskip\@centering\let\\=\@eqncr
+$$\halign to \displaywidth\bgroup\@eqnsel\hskip\@centering
+  \hfil$\displaystyle\tabskip\z@{##}$&\global\@eqcnt\@ne 
+  \hfil${##}$\hfil&\global\@eqcnt\@ne
+  \hskip 2\arraycolsep \hfil${##}$\hfil
+  &$\hfil\displaystyle\tabskip\z@{##}$&\global\@eqcnt\@ne
+  \hfil${##}$\hfil&\global\@eqcnt\@ne
+  \hskip 2\arraycolsep \hfil${##}$
+  &\global\@eqcnt\tw@ \hskip 2\arraycolsep $\displaystyle\tabskip\z@{##}$\hfil 
+   \tabskip\@centering&\llap{##}\tabskip\z@\cr}
+
+\newenvironment{eqarrays}{\@beqarrays}{\@eeqarrays}
+\newenvironment{eqfarrays}{\@beqfarrays}{\@eeqarrays}
+\newenvironment{lparrays}{\@blparrays}{\@eeqarrays}
+\newenvironment{threearray}{\@threearray}{\endeqnarray}
+\catcode`@=12
+\endinput
+
+%%
+%% End of package.
+%%

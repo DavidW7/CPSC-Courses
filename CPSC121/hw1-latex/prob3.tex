@@ -1,0 +1,43 @@
+\item[14] In this problem we will explore circuit design with limited resources by taking advantage of \textit {functionally complete} sets of logic gates. A set of logic gates is functionally complete if it is able to simulate all of the operations $\{AND, OR, NOT\}$. Here, we will show that $\{NOR\}$ alone is functionally complete.
+
+For reference, a 2-input NOR operation on inputs $a$ and $b$ is written as $a \downarrow b$, and is equivalent to $\lnot (a \lor b)$.
+
+\begin{enumerate}
+    \item Using rules of logical equivalence, show that the 2-input NOR operation can be used to simulate a 1-input NOT operation.
+    \vspace{1.0in}
+    \item Using rules of logical equivalence, show that two 2-input NOR operations can be used to simulate a 2-input OR operation.
+    \vspace{2.0in}
+    \item Using a circuit diagram with accompanying truth table, show that multiple 2-input NOR gates (with non-inverted inputs) can be used to simulate a 2-input AND gate. Be sure to label your input and output signals.
+    \vspace{2.5in}
+    
+    \newpage
+    
+    \item Below is a truth table for a system with 4 inputs. Design a circuit to implement the function, using only 2-input NOR gates with non-inverted inputs. A modest penalty will be applied to solutions using 16 or more gates. Hint: begin with a circuit using other gates, that can be easily converted to NOR gates using the double-negative law and DeMorgan's laws.
+    
+    \begin{tabular}{cccc|c}
+      $x_3$ & $x_2$ & $x_1$ & $x_0$ & $f$ \\
+      \hline
+      F & F & F & F & F \\
+      F & F & F & T & F \\
+      F & F & T & F & T \\
+      F & F & T & T & F \\
+      \hline
+      F & T & F & F & T \\
+      F & T & F & T & F \\
+      F & T & T & F & F \\
+      F & T & T & T & F \\
+      \hline
+      T & F & F & F & F \\
+      T & F & F & T & F \\
+      T & F & T & F & T \\
+      T & F & T & T & F \\
+      \hline
+      T & T & F & F & T \\
+      T & T & F & T & T \\
+      T & T & T & F & F \\
+      T & T & T & T & F \\
+    \end{tabular}
+    
+\end{enumerate}
+
+\newpage

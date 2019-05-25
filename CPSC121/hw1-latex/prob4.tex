@@ -1,0 +1,25 @@
+\item[8] Design  a circuit that  takes five inputs  $x_4$,  $x_3$, $x_2$, $x_1$,  $x_0$
+  representing an unsigned binary number in the range of $\left[0,31\right]$ and a single
+  output $z$ which is \texttt {true} if (and only if)  the binary number specified by the
+  inputs is a prime number. Assume that 0 and 1 are not prime, and 2 is prime.
+  For instance, your circuit should output \texttt {true} in the following cases:
+  \begin{itemize}                                                                                   
+  \item  $x_4 =  \texttt{false}$,  $x_3 =  \texttt{false}$, $x_2  =  \texttt{false}$, $x_1  =
+    \texttt{true}$, $x_0 = \texttt{false}$ (decimal 2).
+  \item  $x_4 =  \texttt{true}$,  $x_3 =  \texttt{false}$, $x_2  =  \texttt{false}$, $x_1  =
+    \texttt{true}$, $x_0 = \texttt{true}$ (decimal 19).
+  \item  $x_4 =  \texttt{true}$,  $x_3 =  \texttt{true}$, $x_2  =  \texttt{true}$, $x_1  =
+    \texttt{false}$, $x_0 = \texttt{true}$ (decimal 29).
+  \end{itemize}
+  but it should output false in these cases:                                                        
+  \begin{itemize}                                                                                   
+  \item  $x_4 =  \texttt{false}$,  $x_3 =  \texttt{false}$, $x_2  =  \texttt{false}$, $x_1  =
+    \texttt{false}$, $x_0 = \texttt{true}$ (decimal 1).
+  \item  $x_4 =  \texttt{false}$,  $x_3 =  \texttt{true}$, $x_2  =  \texttt{true}$, $x_1  =
+    \texttt{false}$, $x_0 = \texttt{false}$ (decimal 12).
+  \item  $x_4 =  \texttt{true}$,  $x_3 =  \texttt{true}$, $x_2  =  \texttt{false}$, $x_1  =
+    \texttt{false}$, $x_0 = \texttt{true}$ (decimal 25).
+  \end{itemize}                                                                                     
+  Justify your answer! You may use any gates available in Logisim, with any number of inputs
+  and/or inverted inputs. A modest penalty will be applied to solutions using 11 or more gates.
+  \newpage
