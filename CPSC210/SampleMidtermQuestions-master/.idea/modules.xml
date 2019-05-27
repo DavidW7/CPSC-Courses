@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/EmailManager/src/EmailManager.iml" filepath="$PROJECT_DIR$/EmailManager/src/EmailManager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JDrawing/src/JDrawing.iml" filepath="$PROJECT_DIR$/JDrawing/src/JDrawing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KafeCompany/src/KafeCompany.iml" filepath="$PROJECT_DIR$/KafeCompany/src/KafeCompany.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PaymentSystem/PaymentSystem.iml" filepath="$PROJECT_DIR$/PaymentSystem/PaymentSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SimGame/src/SimGame.iml" filepath="$PROJECT_DIR$/SimGame/src/SimGame.iml" />
+    </modules>
+  </component>
+</project>

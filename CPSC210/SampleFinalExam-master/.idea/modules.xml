@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CompositeDrawingEditorComplete/src/CompositeDrawingEditorComplete.iml" filepath="$PROJECT_DIR$/CompositeDrawingEditorComplete/src/CompositeDrawingEditorComplete.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EmailManager/src/EmailManager.iml" filepath="$PROJECT_DIR$/EmailManager/src/EmailManager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HRSystem/src/HRSystem.iml" filepath="$PROJECT_DIR$/HRSystem/src/HRSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HRSystemComplete/src/HRSystemComplete.iml" filepath="$PROJECT_DIR$/HRSystemComplete/src/HRSystemComplete.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LinkedListComplete/src/LinkedListComplete.iml" filepath="$PROJECT_DIR$/LinkedListComplete/src/LinkedListComplete.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PhotoAlbumBase/src/PhotoAlbumBase.iml" filepath="$PROJECT_DIR$/PhotoAlbumBase/src/PhotoAlbumBase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/SampleFinal.iml" filepath="$PROJECT_DIR$/.idea/SampleFinal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SnakeStarterLecLab/src/SnakeStarterLecLab.iml" filepath="$PROJECT_DIR$/SnakeStarterLecLab/src/SnakeStarterLecLab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TaskManager/src/TaskManager.iml" filepath="$PROJECT_DIR$/TaskManager/src/TaskManager.iml" />
+    </modules>
+  </component>
+</project>

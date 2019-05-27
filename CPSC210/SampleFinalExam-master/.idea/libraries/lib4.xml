@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="lib4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/PhotoAlbumBase/lib/apiguardian-api-1.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PhotoAlbumBase/lib/junit-jupiter-api-5.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PhotoAlbumBase/lib/junit-platform-commons-1.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PhotoAlbumBase/lib/opentest4j-1.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
