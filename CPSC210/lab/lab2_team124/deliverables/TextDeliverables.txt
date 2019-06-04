@@ -1,0 +1,57 @@
+Task 3:
+
+public Set<Photo> findPhotosInDateRange(Date start, Date end){
+		Set<Photo> photos = new HashSet<Photo>();
+
+		for(Photo photo: getPhotos()) {
+            Date dateCreated = photo.getDateCreated();
+			if((dateCreated.after(start) && dateCreated.before(end))
+					|| dateCreated.equals(start)
+					|| dateCreated.equals(end))
+				photos.add(photo);
+		}
+
+		return Collections.unmodifiableSet(photos);
+	}
+
+Task 4:
+
+ public void flipHorizontal() {
+        // clone the original image to use as reference, from stack overflow question 3514158
+        BufferedImage originalImg = new BufferedImage(image.getWidth(), image.getHeight(), image.getType());
+        Graphics g = originalImg.getGraphics();
+        g.drawImage(image, 0, 0, null);
+        g.dispose();
+
+        int width = image.getWidth();
+        int height = image.getHeight();
+
+        for (int x = 0; x < width / 2 ; x++) {
+            for (int y = 0; y < height; y++) {
+                image.setRGB(width - 1 - x, y, image.getRGB(x, y));
+                image.setRGB(x, y, originalImg.getRGB(width - 1 - x, y));
+            }
+        }
+}
+
+Task 5:
+
+private int getBlurredColourAt(int x, int y) {
+        final int SPREAD = 1;
+        int redSum = 0;
+        int greenSum = 0;
+        int blueSum = 0;
+        int count = 0;
+
+        for (int dx = -SPREAD; dx <= SPREAD; dx++) {
+            for (int dy = -SPREAD; dy <= SPREAD; dy++) {
+                if (isInBounds(x + dx, y + dy)) {
+                    Color rgb = new Color(image.getRGB(x + dx, y + dy));
+                    redSum += rgb.getRed();
+                    blueSum += rgb.getBlue();
+                    greenSum += rgb.getGreen();
+                    count++;
+                }
+            }
+        }
+}

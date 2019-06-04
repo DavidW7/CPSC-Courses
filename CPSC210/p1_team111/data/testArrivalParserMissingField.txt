@@ -1,0 +1,48 @@
+[
+  {
+    "Direction": "EAST",
+    "RouteMap": {
+      "Href": "http://nb.translink.ca/geodata/043.kmz"
+    },
+    "RouteName": "JOYCE STN/UBC",
+    "RouteNo": "043",
+    "Schedules": [
+      {
+	    "_comment" : "no expect countdown",
+        "AddedStop": false,
+        "AddedTrip": false,
+        "CancelledStop": false,
+        "CancelledTrip": false,
+        "Destination": "JOYCE STN",
+        "ExpectedLeaveTime": "3:38pm",
+        "LastUpdate": "03:36:52 pm",
+        "Pattern": "EB1",
+        "ScheduleStatus": "-"
+      },
+      {
+	    "_comment" : "no schedule status",
+        "AddedStop": false,
+        "AddedTrip": false,
+        "CancelledStop": false,
+        "CancelledTrip": false,
+        "Destination": "JOYCE STN",
+        "ExpectedCountdown": 9,
+        "ExpectedLeaveTime": "3:46pm",
+        "LastUpdate": "02:44:01 pm",
+        "Pattern": "EB1"
+      },
+      {
+	    "_comment" : "no dest",
+        "AddedStop": false,
+        "AddedTrip": false,
+        "CancelledStop": false,
+        "CancelledTrip": false,
+        "ExpectedCountdown": 19,
+        "ExpectedLeaveTime": "3:56pm",
+        "LastUpdate": "02:54:03 pm",
+        "Pattern": "EB1",
+        "ScheduleStatus": "*"
+      }
+	]
+  }
+]

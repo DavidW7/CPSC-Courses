@@ -1,0 +1,88 @@
+[
+  {
+    "_comment" : "no name";
+    "AtStreet": "108 AVE",
+    "WheelchairAccess": 1,
+    "BayNo": "N",
+    "Latitude": 49.19845,
+    "Longitude": -122.77881,
+    "StopNo": 61288,
+    "OnStreet": "160 ST",
+    "Routes": "337",
+    "City": "SURREY"
+  },
+  {
+    "_comment" : "no stop no",
+    "Name": "WB LOUGHEED HWY FS DOMINION AVE",
+    "AtStreet": "DOMINION AVE",
+    "WheelchairAccess": 1,
+    "BayNo": "N",
+    "Latitude": 49.25833,
+    "Longitude": -122.754,
+    "OnStreet": "LOUGHEED HWY",
+    "Routes": "701, C37",
+    "City": "PORT COQUITLAM"
+  },
+  {
+    "_comment" : "normal",
+    "Name": "SB GRANVILLE ST NS ROBSON ST",
+    "AtStreet": "ROBSON ST",
+    "WheelchairAccess": 1,
+    "BayNo": "N",
+    "Latitude": 49.28172,
+    "Longitude": -123.11938,
+    "StopNo": 61292,
+    "OnStreet": "GRANVILLE ST",
+    "Routes": "004, 006, 007, 010, 014, 016, 050",
+    "City": "VANCOUVER"
+  },
+  {
+    "_comment" : "no lon",
+    "Name": "NB GRANVILLE ST NS W GEORGIA ST",
+    "AtStreet": "W GEORGIA ST",
+    "WheelchairAccess": 1,
+    "BayNo": "N",
+    "Latitude": 49.28232,
+    "StopNo": 61293,
+    "OnStreet": "GRANVILLE ST",
+    "Routes": "004, 006, 007, 010, 014, 016, 017, 020, 050",
+    "City": "VANCOUVER"
+  },
+  {
+    "_comment" : "no lat",
+    "Name": "EB DAVID AVE FS GENEST WAY",
+    "AtStreet": "GENEST WAY",
+    "WheelchairAccess": 1,
+    "BayNo": "N",
+    "Longitude": -122.78519,
+    "StopNo": 61294,
+    "OnStreet": "DAVID AVE",
+    "Routes": "188, C28",
+    "City": "COQUITLAM"
+  },
+  {
+    "_comment" : "no routes",
+    "Name": "NB 232 ST NS FERN CRES",
+    "AtStreet": "FERN CRESCENT",
+    "WheelchairAccess": 1,
+    "BayNo": "N",
+    "Latitude": 49.24073,
+    "Longitude": -122.57957,
+    "StopNo": 61295,
+    "OnStreet": "232 ST",
+    "City": "MAPLE RIDGE"
+  },
+  {
+    "_comment" : "normal", 
+    "Name": "WB 64 AVE FS 203 ST",
+    "AtStreet": "203 ST",
+    "WheelchairAccess": 1,
+    "BayNo": "N",
+    "Latitude": 49.11903,
+    "Longitude": -122.66089,
+    "StopNo": 61296,
+    "OnStreet": "64 AVE",
+    "Routes": "364, 395, 531",
+    "City": "LANGLEY - TOWNSHIP"
+  }
+ ]
