@@ -1,0 +1,103 @@
+\documentclass[a4paper, 20pt,fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{jeffe,handout}
+\usepackage{eqarrays}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes.gates.logic.US,shapes.gates.logic.IEC,calc}
+\usepackage{hyperref}
+\usepackage{aurical}
+\usepackage[T1]{fontenc}
+\usepackage{multirow}
+
+\def\lnot{\mathop{\sim}}
+\def\implies{\mathop{\rightarrow}}
+\def\xor{\mathop{\oplus}}
+\def\andnot{\mathbin{\textit{AndNot}}}
+\def\sequence#1#2{\dsequence{#1}{1}{#2}}
+\def\dsequence#1#2#3{#1_{#2}, \ldots, #1_{#3}}
+\def\ith{$i^{\textrm\scriptsize th}$}
+
+\definecolor{solnblue}{rgb}{0,0,1}
+\newenvironment{soln}{\color{solnblue}}{}
+
+\begin{document}
+\headers{CPSC 121}{ }{Summer, 2019}
+
+\begin{center}
+    \LARGE
+    \textbf{HW 4}
+    \\[1ex]
+    \Large Due: 23:00, Wednesday June 12, 2019  \\
+\end{center}
+    \LARGE
+\begin{tabular}{rl}
+ & \\
+CS ID 1: &  d6a2b\\
+ & \\
+CS ID 2: & b9i2b\\
+ & \\
+\end{tabular}
+\large
+
+\noindent\textbf{\LARGE Instructions:}
+\begin{enumerate}
+\item Do not change the problem statements we are giving you. Simply add your solutions by editing this latex document. To make it easier for the TAs to find your solutions, please use the \textbf{soln} environment we provided as follows:
+\begin{soln}
+\begin{verbatim}
+    \begin{soln}
+    My solution is here.
+    \end{soln}
+\end{verbatim}
+\end{soln}
+Your solution will then appear in blue, and be easier to differentiate from the questions.
+\item Include formatting to clearly distinguish your solutions from the given problem text. Improperly or insufficiently typeset submissions will receive a penalty.
+\item If you need more space, add a page between the existing pages using the \texttt{\textbackslash newpage} command.
+\item Export the completed assignment as a PDF file for upload to Gradescope.
+\item On Gradescope, upload only \textbf{one} copy per partnership. (Instructions for uploading to Gradescope are posted on the assignments page of the course website.)
+\item During submission, for each question, please link ALL pages on which your solution appears. Submissions with several linking errors will incur a small penalty.
+\item Late submissions will be accepted up to 24 hours past the deadline with a penalty of 20\% of the assignment’s maximum value
+\end{enumerate}
+
+\noindent\textbf{\LARGE Academic Conduct:} 
+I certify that my assignment follows the academic conduct rules for of CPSC 121 as outlined on the course website. As part of those rules, when collaborating with anyone outside my group, (1) I and my collaborators took no record but names away, and (2) after a suitable break, my group created the assignment I am submitting without help from anyone other than the course staff. \\
+
+\textbf{Version history:}
+\begin{itemize}
+    \item 2019-05-29 13:22 -- Due date updated
+    \item 2019-05-29 02:47 -- Initial version for release
+\end{itemize}
+
+\newpage
+\normalsize
+
+\begin{question}{1.}[10]
+
+
+\input{prob1.tex}
+
+\noindent {\em Each of the  next four questions asks you to prove a  theorem. When the theorem
+is stated  in English,  it would be  an excellent  idea to first  rewrite it  in predicate
+logic, and then  think about the proof  techniques we discussed in class,  and the general
+``structure'' of direct or indirect proofs for certain types of statements.}
+
+\input{prob2.tex}
+
+\input{prob3.tex}
+
+\input{prob4.tex}
+
+\input{prob5.tex}
+
+\input{prob6.tex}
+
+
+\end{question}
+
+\end{document}
+
+
+
+
+
+ 
+

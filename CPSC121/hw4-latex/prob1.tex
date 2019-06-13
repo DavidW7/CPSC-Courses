@@ -1,0 +1,49 @@
+\item[9] Each of the  following theorems is either valid or invalid,  but the proof given
+  is incorrect even if the theorem is valid. Explain briefly what mistake was made in each
+  case.
+  \begin{question}{a.}[4]
+  \item[3] \textbf{Theorem}:  Let $f$, $g$  and $h$  be three functions  from $\mathbf{N}$
+    into $\mathbf{R}^+$. If $f \in O(g)$ and $g \in O(h)$, then $f \in O(h)$.
+
+    \noindent\textbf{Proof}: Consider  three unspecified functions  $f$, $g$ and  $h$ from
+    $\mathbf{N}$ into $\mathbf{R}^+$. Assume that $f \in  O(g)$ and $g \in O(h)$. Since $f
+    \in O(g)$, there is a real number $c$ and a positive integer $n_0$ such that for every
+    $n \ge  n_0$, $f(n) \le cg(n)$.  Similarly, for every  $n \ge n_0$, $g(n)  \le ch(n)$.
+    Therefore, for every $n  \ge n_0$, $f(n) \le cg(n) \le c(ch(n)) =  c^2 h(n)$. Hence $f
+    \in O(h)$ using the constants $c^2$ and $n_0$.
+    \begin{Questions}
+    \\
+    \\{\color{NavyBlue} The proof is wrong because the variable c in $f(n) \le cg(n)$ and $g(n) \le ch(n)$ are not the same variable, but rather a made up generalized variable for defining big-O formula. It would not end up as c^2, but more like $f(n) \le c_1g(n)$, $g(n) \le c_2h(n)$, and the final c being $c_1 * c_2$.}
+    \\ 
+      \vfill
+    \end{Questions}
+
+  \item[3] \textbf{Theorem}: If $n^2 + n - 6 \ge 0$, then $n \ge 2$.
+
+    \noindent\textbf{Proof}: When $n \ge 2$, we know that $n^2 \ge 4$, so $n^2 + n \ge 6$,
+    and therefore $n^2 + n - 6 \ge 0$.
+    \begin{Questions}
+    \\
+    \\{\color{NavyBlue}The proof is wrong because the structure of the proof is wrong. The theorem is in the form of P->Q, where P=$n^2 + n - 6 \ge 0$, and Q=$n \ge 2$. The proof should use the structure of Q'->P' or simply P->Q, as opposed to currently using Q->P structure.
+    \\
+    \\This results in overlooking cases where n is less than or equal to -2. When $n^2 \ge 4$, $n \ge 2$ is not necessarily true, because n could have larger magnitude than -2 for $n^2 \ge 4$ to be true. Therefore, for cases of n is less than or equal to -2, $n^2 + n \ge 6$ can be false (ex: n = -2, $n^2 + n = (-2)^2 + (-2) = 2 \le 6$).}
+      \vfill 
+      
+    \end{Questions}
+
+  \item[3] \textbf{Theorem}: No matter  how we choose an integer $n$, the  value $n^3 + n$
+    will be even.
+
+    \noindent\textbf{Proof}: We use  a proof by contradiction. Assume that  the theorem is
+    false. That is, $n^3 + n$ is odd. This is  not true, as we can see by choosing $n = 2$
+    ($2^3 +  2 = 10$,  which is even).  So we have found  a contradiction, which  means the
+    theorem is true.
+    \begin{Questions}
+    \\
+    {\color{NavyBlue} \\The proof is wrong, since for proof by contradiction, we have to use the contradicted statement to make assumptions that would contradict for all n, not find a single n that would proof the contradicted statement false.
+    \\
+    \\A correct version of this proof would've been more like: Suppose $n^3 + n = x$, where x is odd. We choose a general n to have properties of an even number. n is manipulated using $n^3 + n = x$ to get some odd x, where it is manipulated again to get n, where n now has properties of an odd number. Therefore, theorem is true because when the theorem is false, a contradiction happens (n can't be even and odd at the same time).}
+    
+      \vfill\eject
+    \end{Questions}
+  \end{question}

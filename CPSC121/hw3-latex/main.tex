@@ -1,0 +1,239 @@
+\documentclass[a4paper, 20pt,fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{jeffe}
+\usepackage{array}
+\usepackage{handout}
+\usepackage{eqarrays}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes.gates.logic.US,shapes.gates.logic.IEC,calc}
+\usepackage{hyperref}
+\usepackage{aurical}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+
+\def\lnot{\mathop{\sim}}
+\def\implies{\mathop{\rightarrow}}
+\def\xor{\mathop{\oplus}}
+
+\begin{document}
+\headers{CPSC 121}{ }{Summer, 2019}
+
+\begin{center}
+    \LARGE
+    \textbf{HW 3}
+    \\[1ex]
+    \Large Due: 23:00, Wednesday May 29, 2019  \\
+\end{center}
+    \LARGE
+\begin{tabular}{rl}
+ & \\
+CS ID 1: &  d6a2b\\
+ & \\
+CS ID 2: & b9i2b\\
+ & \\
+\end{tabular}
+\large
+
+\textbf{Instructions:}
+\begin{enumerate}
+\item Do not change the problem statements we are giving you. Simply add your solutions by editing this latex document. 
+\item If you need more space, add a page between the existing pages using the \texttt{\textbackslash newpage} command.
+\item Include formatting to clearly distinguish your solutions from the given problem text (e.g. use a different font colour for your solutions). Improperly or insufficiently typeset submissions will receive a penalty.
+\item Export the completed assignment as a PDF file for upload to Gradescope.
+\item On Gradescope, upload only \textbf{one} copy per partnership. (Instructions for uploading to Gradescope are posted on the assignments page of the course website.)
+\item During submission, for each question, please link ALL pages on which your solution appears. Submissions with several linking errors will incur a small penalty.
+\item Late submissions will be accepted up to 24 hours past the deadline with a penalty of 20\% of the assignment’s maximum value
+\end{enumerate}
+
+\textbf{Academic Conduct:} 
+I certify that my assignment follows the academic conduct rules for of CPSC 121 as outlined on the course website. As part of those rules, when collaborating with anyone outside my group, (1) I and my collaborators took no record but names away, and (2) after a suitable break, my group created the assignment I am submitting without help from anyone other than the course staff. \\
+
+\textbf{Version history:}
+\begin{itemize}
+    \item 2019-05-22 02:52 -- Initial version for release
+\end{itemize}
+
+\newpage
+
+\begin{question}{1.}
+\input{prob1.tex}
+\newpage
+
+\\1(a).
+\\$ \forall x \in D,  \exists y \in G, M(x, y) \rightarrow \forall z \in P, R(y, z) $
+\\
+\\1(b).
+\\$\exists x \in D, \exists y \in D, \exists z \in G,  B(x, z) \land x \ne y \land M(y, z) $
+\\
+\\1(c).
+\\$ \exists x \in D, \forall y \in G, M(x, y) \rightarrow B(x, y) $
+\newpage
+
+\input{prob2.tex}
+
+\newpage
+
+\\2(a).
+\\If a developer only develop all games for a single platform, then it can't be that the developer made a game that they bribed a journalist for a positive review.
+\\
+\\2(b).
+\\ A developer bribed a journalist for positive reviews on all the games released on Nintendo Switch that they didn't make.
+\\
+\\2(c).
+\\Some developer(s) release some games on exclusive (one platform only), and other games on all platforms.
+\\
+\newpage
+
+\input{prob3.tex}
+
+\newpage
+
+\\3(a).
+\\$\exists x \in \R, x > 0 \land (\exists y \in \R, y < x \land x + y \ge 2x) $
+\\Original (2x = x+x > x+y if y<x)
+\\
+\\3(b).
+\\$\forall x \in \R, \exists y \in \R, x/y > 1$
+\\Neither (div 0 = null)
+\\
+\\3(c).
+\\$\exists x\in\Z, \exists y\in\Z, \exists z\in\Z, x^3 + y^3 + z^3 < 0$
+\\Negation (+x, +y, -z)
+\\
+
+\newpage
+
+\input{prob4.tex}
+
+\newpage
+\\4(a).
+\\$\forall x \in \R, x \ne 0 \rightarrow (\exists y \in \R, \forall z \in \R, (x/y = -1) \Longleftrightarrow (z = y))$
+\\
+\\4(b).
+\\$\forall x \in \Z, x \ge 2 \rightarrow (Prime(x) \Longleftrightarrow (\exists y \in \Z, (x/1 = y) \leftrightarrow (x = y)))$
+\\
+\\4(c).
+\\$\exists k \in \R, f(n) \in O(h(n)) \rightarrow k \cdot f(n) \in O(h(n))$
+\\ [Assuming f(n), h(n), and O(n) is previously defined in definition of O(n)]
+\newpage
+
+\input{prob5.tex}
+\newpage
+\\5(a).
+\\ False, because the highest order term in a(n) is a polynomial of the third order, while in b(n) it is a polynomial of the second order. Over n, third order polynomial will outpace second order polynomial term, therefore a(n) cannot be within O(b(n)).
+\\
+\\5(b).
+\\True, because witness a(n) $\le$ c*b(n) + n0, where c = 3/4 and n0 = 2.
+\\
+\\5(c).
+\\True, because the terms in a(n)+b(n) are the same order as the terms in c(n) (4 and 2, respectively). Therefore, there must exist some c and n0 such that a(n)+b(n) can be scaled to satisfy c*C(n)+n0 > a(n)+b(n). 
+\newpage
+\input{prob6.tex}
+\newpage
+\\6(a).
+\\We can observe a pattern:
+\\
+\begin{tabular}{c c c c}
+    $n$ & $B(n)$ & $Note$ & $2^n$\\
+    \hline
+    0 & 1 & Empty subset&1\\
+    1 & 2 & Empty subset and itself&2\\
+    2 & 4 & As shown&4\\
+    3 & 8 & Previous subsets times 2&8\\
+    4 & 16 &&16\\
+    5 & 32 &&32\\
+    
+    \end{tabular}
+\\
+\\We can observe that B(n) = $2^n$, as the values are equal. This makes sense since B(n) = 2B(n-1) = 2*$2^(^n^-^1^) = 2^n$.
+\\
+\\6(b).
+\\ t = duration in seconds = 0.0001 * B(n), therefore:
+\\ n = log(base2)(t/0.0001)
+\\We can use this formula to calculate largest n (rounded down) for all t
+\\
+\\Note that to account for leap years, we'll assume a year is 365.25 days long, and a month is 30.4375 days long.
+\\
+\\
+\begin{tabular}{|l|l|c||l|l|c|}\hline
+    Duration &t/0.0001& Largest $n$ & Duration &t/0.0001& Largest $n$ \\ \hline
+    1 second & 10000&13 &
+    1 minute &600000& 19\\ \hline
+    1 hour & 36000000&25 &
+    1 day &864000000& 29\\ \hline
+    1 month &26298000000&34 &
+    1 year & 315576000000&38\\ \hline 
+    10 years & 3.15576e+12&41&
+    100 years & 3.15576e+13&44\\ \hline
+    \end{tabular}
+    \newpage
+\end{question}
+\newpage
+\begin{figure}
+\begin{verbatim}
+............   .,*/#(/(/(##%%#%##((//*****//*/////*******//*/**/**,,, ,,                                                                                                                  .,.......,,
+...........  ..,((%%%%%%#(####(((/***********/******************///*,,*,                                                                                                                  .. ......,*
+.............,**/#&&&##(((((((/***/*****************************/*****,.,*                                                                                                                .    .,,***
+............ ,,,/(((/##((//////////*************************************...                                                                                                              .,...,*/(((/
+.............,/##(//((((///*///////********************************////**, ,.                  ...               .                                                                       .,   .,/((((
+.........,,,//#%(((((///*////////*///***************///////**********//***....                                 ..                                                                        ..     ,#(#%
+... . ..,,///((##(##(////////////(/*//******///*******////*********//((///,,.,,                              .(/*,.,,,.     ,,                                                                 .*((#%
+.......,**///((####(/(/////(///(///(////((/*****/*/////////////*****///////**,*,                    .,      .*(/*,,,*##/.    ,                                                               .,*/(%&&
+........*/((##((//#(///(/((((/(/((///((//////(((/////**/********//////////**//,.                   ,*.    .*,*/(##(((**.     .                                                                    .,,
+     ..*###%###%%%(/((///((((#/(///(///((//*//*/////////////(((/********/*/(/**,.                .,//**.      *#####*....,        ..                                                                 
+ ....,/###%######((#//*///(/#(#((#((/**//(((((/////***************////////(/*/**,.       *       . ,*//*       (//(#.          ,                                                                     
+     .,(%##%###%%#####/*(((#(#(#(/(##//**////////////***//*********//*////***/***,.           .*      ((,      .//((.        *#((*.                                                           ..   . 
+     .,((#%%%%%%%#%###((((((((#/(#//((##(/************/*****////////((((####(/***,.    .   .   ,,     ,          *((/        ,(((/*.                                                                 
+     ./%&%&%%%&%#&#####(#(#(#(((((#(///////(/(((/////////////////(##%%%%%%###((,*,.  .,*/((, .,,****/(            ,.         *#((/#,                                                              .  
+      ./##%%&%##%####(##(#%###(#(((//((#%%%%&&%&%%%%##(((/(/(((((##%%%%########(,,, ./(###(  .. ,(((#((*         ..         ,((((*,,                                                              .  
+        .%%%%#%#%(#%(((#######(#((/##%%%%%%&&&&&&&%%%%##(((//(((##%%##%%&%###(##(/*#&&/((#(  .  .(##((/.   ..  ,.            */((,..                                                             ..  
+        ./%&%#(%##%#((((###((##((((%%####%%%%%%##%%&&&&%#((//((%&%#%%###%%%#((#%%%#(&&.,///       ,###*      ./,.             (##(*.                                                             ..  
+         ,%%%(#(#####((((##(#(#####((&&%#%#((((#%%##%&&&%%&#(((#&%%%%%&&&&&#&%#####/%&,....,.      ##(.      ,(,.             (*..      .                                                        ..  
+          .%%##%######((####(%&@&@@&%%%%#(((((%%%%%%%%%%&&#/*///(%&%####%%###(((#((,#*.  ..           .,,.  ,/..                                                                                 .   
+           ,%%%%#%####(#&&&&&&&@&@@&%%%##%%&&&&&&%%%%(#&&&%/*/**/%(((((#(((((((/(((*/ ,,*/((,   .    .,,,   */,,,,                 ...,.                                                             
+            (%&&&&&@&&&%%%&&&&&&@&&@%#%%&&%%%&&&%(#######%#((/***/%/(((((((((///((/*..*,,,*//*.      .,,.  ./,  ,.                .**,...                                                       .,   
+          ,(/(/((%%%(((/###%%%%%%###%##(####%%#######((#%#(((/****/#%%%%%%%##(((((/,,**,*////**.      ,,,,,//*.....        ,,  .,/(/*...*,.                                                     .*.  
+           %%%###((#(/*/((###%#%%###%####(((##(((((((#####(////***/*(#((((((((((((/* ,/**////*        .    /(,. ..,,......,*/*,,,/((/*.,.                                                   ....     
+           (&%#%#####///((##############(###((#(##((/((##((////******#((/(((((((((/**(,                   *(*,.,,,,,,**,  ,*///*,.,*,.,,.                                                    .,*     
+           .%########(/(((#((#########((((######(((((((##(///////////*/#((/////((//**(*.                 ,/*.    **..,,.  ./((((/**/,,,.                                                     .,,   . 
+            /####%&%%#(/(((####(((((((((((((((((((((((##(((((#######((#((((/(/((///**#(                ./(*      *,  .*.   .,*//*    ,.                                                      ...   . 
+             (##%%&&%((##((######((((((####((((((((((####%&@@&%%%%%#%%((((((((((//**,,##/            ,(((,                .,                                                                  ..   ..
+              (#%%&%#/(((((######(###(##(((((((((((((###%%&&&&&&%&%%#(((((((((((((/**  .((*      .*(((,                  ...                                                                   .    .
+              ,((####(((((#############((((((((((((((((((((###%%%%#(((((((((###(((///.   ,#(. ./(((,                   ,**,.                                                                   .    .
+               .#(/(((((###############(((((((((((((////(((((#####(#(((((((((###((///,    ,##(//,                       ,,.                                                                          
+                 (/(//(%#######(((##############(((//((((((((((((((((((((###((#(#((//*    ,###.                                                                                                      
+                  ,(###%%#####(#(#####(###########(((######(((#####%%&&&%%%%##((((((//    /##*                                                                                                       
+                    (##%&(####(((##################%%%%%%%&&%#((((///((((((%%#((/(((// ,(###(                                                                                                  .. ...
+                         .(####((#################%%%&&%#(((/(((((####((((((###((/(((/  (###*                                                                                            ...,*///****
+                          ####(((#############(((##%&%######%##%%%%#####(((((((##(/(/, ,###*         *(%%%&&&&&&&&&&&&&&&%#/.                                                           .,*//((((##(/
+                          *###################(((((((((####%%%&%%%%%%##(#(((((((((((/  ###(        #%&&%*                .,*#&&&#,                                                      ,*/#%&&&&&&%%
+           ...,,,,,,,,,,,,*##############%####(#(##(((#######%%%####((((((((((((((/(  /##(.       #%&&*                         *&&%,                                                .*/#%%&&&&&&&%%%
+  .,*****/////////////////%###%%%#######%%%%#######(((((######(((((((((((//((///(#(  *(##,       #%%%,                             ,&&(                                           .(%&&&&&&%%%&&&&%##
+/////////////////////////(&####%%%%%%%%%%%%%%%%###(((((((((((((#((((((((((//(///##  /###(       /(##%,                               ,&%.                                        (%%, .*(*.          
+/////////((((((((((((((/(%####%%%%%%%%%%%%%%########((((/(/((((((#((#(((##((//(#. ,(##%*       *(###%#*.                              ,&%.                                      %&/    ((,.          
+(((((((((((((((((((**((/#%#&###%%%%%%%%%%%%%%%%%%%%%###((((((((((##########(((&%%/*/#%#       ./(((#####(((//****///*,,..              #&%                                     /&(     ((,.          
+(((((((((((((((/////(###%#%%&%%%%%%%%%%%%%%%%%%%&%%%%%%###(((#######%%%%#####&@&#(///(*,,,,. .#%%####%%%%%%%%%%%%%%%%%%##((/,          .&&                                    .%&      (/,,          
+(((((((((((*//(((/(&%##(#&%%&&%%%%%%%%%%%%%&&&%&%%%%%%%%%%%####%%%%%%%%%%%%%&@@&%%###////((*,*%%%%&&&&&&&&&&&&&&&&&&&&&&%&&%%%*        .&&*                                   *&&,    ,(/,.        . 
+(((((((*,/((((/(/#%&%%%%%#&#&#&&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&%%%%%%%&&@&&&((##%##(/*/(((,,*%&&&&&&&&&&&&&&&&&%%%&&&&&%%(.       .%&%*.                                 (&&     ,(*          ..
+(*/**(##(##*(##((%(##%#(##&#%&%&&&%%%%%%&%%%%%%%&%%%%%%%%%&&&&&&&&&&%%%%%&&&&@&&&#%&(##(%#(#((/((((*,.*%&&&&&&&&&&&%&&&&&&&&&%#.        (&&(,....               .............*&@&/   ./*,.          .
+//#(#((#/###((##,#(%%&%#%%%&#%(&&&&&&&&&&%&%&&&&&&&&&&&&&&&&&&&&&&%%%%%&&&&&&@&&&&#%%%#/%#%%%(##(/#((#/*..,%&&&&&&&&&&&&&&&&&%%/,.     .(&&#,............           .,,,,,,,,(&@&/,.,*/*,,,,,,,,,,,,*
+/(((#*#((#%/%#%%#%##&%##%%&%%%%(&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&%%%%%&&&&&&&@&@&%&&#(&%##%%%#&%%%##%##/(/((/*,.,(&&&&&&&&&&&&&%%(*,,,,,,,(&&&/,,,,,,,,,,,,,,,,,,.....,,,,....,(@@&/...*/*,*,,**,,,,,,,
+#//((##&%%%%%#%%%*((%&%%%#&&%%#&(%&&&&&&&&&&&&&&&&&&&%%%&&%%%%%%%%%&&&&&&&&@&&&&%(%%&%&%(#%%##%#/(%%#&##(/(*///,,../%&&&&&&&&%%#/,,,,,,,(&&&(*,,,,,,,***,,,,,,,,,,,,,,,,,,,*/%@@&(***//**////*,,,,,,,
+#(&#%#%%#%%#*%#%%/%%&%#&%&#&&&%%%#%&&&&&&&&&&&&&&&&&&&&&%%%%%%%%&&&&&&&&&&@@&&&%%#%%&%&%(%%%%&&&&%&%#%###(%(##/#*/(,..,#&&&&&&%#(,,,,,,,(&&&#*,,,,,,,*****,,,,,,,,,,,,,,,,,*/%@@&(***////(((((/*/////
+((%#%%%(#%&%(&%%%#&(#%%&&&%#%&%%#&(%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&@@@&@@&#%%%%&%#%%%%%&%&%%##%#%%/#(%#/((#(%//*,.,%&&&%%(*,,,,,,(&&&%/,,,,,,,*******,,,,,,,,,,,,****(&@@&(**//**/(((((/*/////
+##*((##/&#%#%%#(#%%#%%%&&&&%%#&%###&@@&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&%@@&&&@@&%&&%%%%%%#%&%%%%#%#%&%%#(%###*#(##(((/,/*,.#&%%#*,,,..,%&&&%/,,,,,,,*********,,,,**,,,,/(//#&@@%/**/***////(//*////(
+%%(&##(/#(#%%/%#%%(#%&&%&&&&&&#%%%&@@@@%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&%&&&&&&&&&&(%%%#&%%%#%#%%%%%%%%%&%%%#%#%#/%###/((#/(////,*%%/,...*&&&&&#*,,,,,,,,..,,,,,,*******,,*(%##%&@@#/*//(((/**/(///////(
+&%#&%###*((##/%#%%*##%%(&&%&&&&#&#&@@@&%#%%%%%&&&&&&&&&&&&&&&&&%%&&&&&&&&&&&&&&%#&&&%&%%%(%%%%%%#%%%%%%%%#%#%#/%###*#(%/(/(//*/*(&&&&&&&&@@%/,,,,,.,                 ...,**(%&@@%#//(&@%#((((//////((
+&%%%####*%#%#(%(#%(%(%%/&%&&&@&&&&&@@@&#%&(&&&&&&%%%%%%%&%%%&&&&&&&&%%&&&&&&&&%%(%%&&%%%%#%#%%%%##%%%%#%%%%#%#(%###/%(%##(#(,##//.#&&&&@@&#*,,,.                            *&@@&(//#&@&%((#((/////(/
+%#%%%#&%(&%&%%####(%(%%(&%&&&&&&&&&&@@@@%&%&&&&&&&&&&&&&&&&&&&%&%%%%%&&%&&&&&%%&%&%&&%%%%%#%%#%%(####(#%%%%#%##%#%#(%#%#/(#####/#***%&@@%(*,.        ....                   *&@@%(/(#&@@%###(/////(/*
+\end{verbatim}
+\caption{This is a rare Gregor that only appears once every 1000 homework submissions. If you give extra points for Latex on this hw, you'll be blessed by rare Gregor with students with nice handwriting when grading exams for the next 2 yrs.}
+\label{fig:ascii-box}
+\end{figure}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
+

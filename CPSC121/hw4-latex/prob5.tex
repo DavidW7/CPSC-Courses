@@ -1,0 +1,30 @@
+\item[6] Suppose we have the following five propositions:
+\begin{displaymath}
+\begin{array}{l}
+\phantom{\lnot}X_1 \lor X_2 \lor Y_1 \\
+\lnot Y_1 \lor X_3 \lor Y_2 \\
+\lnot Y_2 \lor X_4 \lor Y_3 \\
+\lnot Y_3 \lor X_5 \lor Y_4 \\
+\lnot Y_4 \lor X_6 \lor X_7 \\
+\end{array}
+\end{displaymath}
+
+Using an \emph {indirect} proof, show that every assignment of truth values to the eleven variables $X_1$, $X_2$, $X_3$, $X_4$, $X_5$, $X_6$, $X_7$, $Y_1$, $Y_2$, $Y_3$, $Y_4$ that makes every one of the five propositions True assigns the value True to \emph {at least} one of $X_1$, $X_2$, $X_3$, $X_4$, $X_5$, $X_6$, $X_7$.
+\\
+\\
+{\color{NavyBlue}
+\\We define each statement above as a, b, c, d, e respectively.
+\\ $\forall $ $X_1$, $X_2$, $X_3$, $X_4$, $X_5$, $X_6$, $X_7$, $Y_1$, $Y_2$, $Y_3$, $Y_4$ $ \in Boolean, a \land b \land c \land d \land e \rightarrow X_1 \lor X_2 \lor X_3 \lor X_4 \lor X_5 \lor X_6 \lor X_7$
+\\
+\\Proof:
+\\ We can use proof by contradiction. Suppose $a \land b \land c \land d \land e$ is true, but $\lnot (X_1 \lor X_2 \lor X_3 \lor X_4 \lor X_5 \lor X_6 \lor X_7)$. We can use DeMorgan's theorem to change $\lnot (X_1 \lor X_2 \lor X_3 \lor X_4 \lor X_5 \lor X_6 \lor X_7)$ to $\lnot X_1 \land \lnot X_2 \land \lnot X_3 \land \lnot X_4 \land \lnot X_5 \land \lnot X_6 \land \lnot X_7$. This means that all X values has to be false. 
+\\
+\\Statement a is defined as $X_1 \lor X_2 \lor Y_1$, and since we know $X_1$ and $X_2$ is false, $Y_1$ has to be true for the statement to be true (property of Or gates). \\
+\\Using the same logic, we can say that for true b, $Y_2$ is true; for true c, $Y_3$ is true; for true d, $Y_4$ is true. Since $Y_4$ is true, and $ X_6$ and $ X_7$ are false, statement e will evaluate to false. However, e is true for $a \land b \land c \land d \land e$ to be true. 
+\\
+\\Therefore, we have arrived to a contradiction, and we can conclude that the original statement of 
+$\forall $ $X_1$, $X_2$, $X_3$, $X_4$, $X_5$, $X_6$, $X_7$, $Y_1$, $Y_2$, $Y_3$, $Y_4$ $ \in Boolean, a \land b \land c \land d \land e \rightarrow X_1 \lor X_2 \lor X_3 \lor X_4 \lor X_5 \lor X_6 \lor X_7$ is true.
+\\
+\\\boxed{}
+}
+\newpage

@@ -1,0 +1,22 @@
+\item[6] Prove that for all integers $a$, $b$, and $c$, if $a$ does not divide $(b-c)$ then $a$ does not divide $b$ or $a$ does not divide $c$.
+\begin{Questions}
+\\
+\\
+{\color{NavyBlue}
+\\$\forall a,b,c\in\mathbb{Z}, \lnot (a | (b-c)) \rightarrow \lnot (a|b) \lor \lnot (a|c)$
+\\
+\\Proof:
+\\ We can do a proof by contradiction. Suppose the negation of $\forall a,b,c\in\mathbb{Z}, \lnot (a | (b-c)) \rightarrow \lnot (a|b) \lor \lnot (a|c)$, or rewritten as $\exists a,b,c\in\mathbb{Z}, \lnot (a | (b-c)) \land (a|b) \land (a|c)$, is true. For $\lnot (a | (b-c)) \land (a|b) \land (a|c)$ to be true, all there terms has to be true. Therefore, $\lnot (a | (b-c))$ is true and there does not exist some integer a,b,c,i where b-c=ia. We'll call this statement 1. Additionally, (a|b) and (a|c) are true and there exists some integer a,b,c,j,k where b=ja and c=ka. We'll call this statement 2 and 3, respectively.
+\\
+\\Suppose i=j-k. We can subtract statement 2 by statement 3 together to get:
+\\
+\\b-c=ja-ka
+\\b-c=(j-k)a
+\\b-c=ia
+\\
+\\We have deduced that statement 1 exists from statement 2 and 3, where both statement 2 and 3 can exist. However, we have stated that statement 1 can not exist for the negated theorem to be true. Therefore, the negated theorem is false, we have a contradiction, and the original theorem is true.
+\\
+\\\boxed{}
+}
+\vfill\eject
+\end{Questions}

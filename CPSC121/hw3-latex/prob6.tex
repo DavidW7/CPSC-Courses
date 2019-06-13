@@ -1,0 +1,46 @@
+\item[6] Given a finite set $S$ of $n$ integers, $S=\{s_1, s_2, \ldots, s_n\}$, consider the problem of finding a subset of those integers, such that the sum of the items in the subset is equal to 0.
+
+One possible solution is to generate all possible subsets of $S$, and then calculate the sum of the values in each subset to see if it is equal to zero.
+
+\begin{question}{a.}[3]
+    \item[4] The number of possible subsets for a set of $n$ integers satisfies the following equation:
+    \[
+          B(n)= \begin{cases}
+          2 B(n-1) & \textrm{if }n > 1\\
+          1 & \textrm{if }n = 0\\
+          \end{cases}
+    \]
+    For instance, when $n=0$ there is only one possible subset: the empty set.
+    When $n = 2$ there are four possible subsets:
+    \[
+      \begin{array}{ll}
+      \{  \} &
+      \{ s_1 \} \\
+      \{ s_2 \} &
+      \{ s_1, s_2 \} \\
+      \end{array}
+    \]
+    Give a (very  simple) mathematical expression for $B(n)$. Use the formula from the first part to justify your answer.
+    \begin{Questions}
+    \vfill
+    \end{Questions}
+    
+    \item[2] Suppose you run an algorithm which takes a number $n$ and a set $S$ of that size and then outputs every subset on a machine where your algorithm takes $.0001$ seconds for each subset it outputs. 
+    
+    Fill in the following table with the largest value of $n$ for which your algorithm terminates for each duration indicated.\bigskip
+    
+    \setlength{\extrarowheight}{0.3cm}
+    \begin{tabular}{|l|c||l|c|}\hline
+    Duration & Largest value of $n$ & Duration & Largest value of n \\ \hline
+    1 second &  &
+    1 minute & \\ \hline
+    1 hour & &
+    1 day & \\ \hline
+    1 month & &
+    1 year & \\ \hline 
+    10 years & &
+    100 years & \\ \hline
+    \end{tabular}
+    
+\end{question}
+
