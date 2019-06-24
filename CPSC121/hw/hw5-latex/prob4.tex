@@ -1,0 +1,74 @@
+ \item[8] Using mathematical induction, prove that
+ \begin{displaymath}
+ \sum_{i=1}^n (i-1) 2^i = (n-2)2^{n+1}
+ + 4
+ \end{displaymath}
+ 
+ \begin{Questions}
+ \\{\color{NavyBlue}
+ \\Proof:
+ \\
+ \\Part 1: Base case
+ \begin{gather}
+ (n-1) 2^n = (n-2)2^{n+1}+ 4
+ \\(1-1) 2^1 = (1-2)2^{1+1}+ 4
+ \\0 = 0
+ \end{gather}
+ \\Part 2: Induction step
+ \\
+ \\ Assuming that n case is true, we have to prove that this statement is true: 
+ \begin{gather}
+ \sum_{i=1}^{n+1} (i-1) 2^i = ((n+1)-2)2^{(n+1)+1}+ 4
+ \end{gather}
+ \\To prove that [4] is true, we say that the sum of n+1 terms is equals to the sum of n terms plus the n+1th term, and simplify from there:
+  \begin{gather}
+ \sum_{i=1}^{n+1} (i-1) 2^i = \sum_{i=1}^n (i-1) 2^i + ((n+1)-1) 2^{n+1}
+ \\ ((n+1)-2)2^{(n+1)+1}+ 4 = ((n-2)2^{n+1}
+ + 4) + ((n+1)-1) 2^{n+1}
+ \\ (n-1)2^{n+2}+ 4 = (n-2)2^{n+1}
+  + n 2^{n+1} + 4
+  \\ (n-1)2^{n+2}= (n-2)2^{n+1}
+  + n 2^{n+1}
+   \\ n2^{n+2} - 2^{n+2} = (n-2)2^{n+1}
+  + n 2^{n+1}
+   \\ n2^{n+2} - 2^{n+2} = n2^{n+1} - 2^{n+2}
+  + n 2^{n+1}
+    \\ n2^{n+2} - 2^{n+2} = n2^{n+1} - 2^{n+2}
+  + n 2^{n+1}
+     \\ n2^{n+2} - 2^{n+2} = 2n2^{n+1} - 2^{n+2}
+     \\ n2^{n+2} - 2^{n+2} = n2^{n+2} - 2^{n+2}
+ \end{gather}
+ \\Steps 5-7 is substituting terms. Step 8 cancels 4 from both sides. Steps 9-10 expands (n-1) and (n-2) terms by distributive property. Steps 11-13 combine like terms to get the final equality. 
+ \\Thus, we have proved that when n case is true, n+1 case is true as well. 
+ \\}
+ \begin{figure}
+\begin{verbatim}
+         _______                   _____                    _____          
+        /::\    \                 /\    \                  /\    \         
+       /::::\    \               /::\    \                /::\    \        
+      /::::::\    \             /::::\    \              /::::\    \       
+     /::::::::\    \           /::::::\    \            /::::::\    \      
+    /:::/~~\:::\    \         /:::/\:::\    \          /:::/\:::\    \     
+   /:::/    \:::\    \       /:::/__\:::\    \        /:::/  \:::\    \    
+  /:::/    / \:::\    \     /::::\   \:::\    \      /:::/    \:::\    \   
+ /:::/____/   \:::\____\   /::::::\   \:::\    \    /:::/    / \:::\    \  
+|:::|    |     |:::|    | /:::/\:::\   \:::\    \  /:::/    /   \:::\ ___\ 
+|:::|____|     |:::|____|/:::/__\:::\   \:::\____\/:::/____/     \:::|    |
+ \:::\   _\___/:::/    / \:::\   \:::\   \::/    /\:::\    \     /:::|____|
+  \:::\ |::| /:::/    /   \:::\   \:::\   \/____/  \:::\    \   /:::/    / 
+   \:::\|::|/:::/    /     \:::\   \:::\    \       \:::\    \ /:::/    /  
+    \::::::::::/    /       \:::\   \:::\____\       \:::\    /:::/    /   
+     \::::::::/    /         \:::\   \::/    /        \:::\  /:::/    /    
+      \::::::/    /           \:::\   \/____/          \:::\/:::/    /     
+       \::::/____/             \:::\    \               \::::::/    /      
+        |::|    |               \:::\____\               \::::/    /       
+        |::|____|                \::/    /                \::/____/        
+         ~~                       \/____/                  ~~                  
+\end{verbatim}
+\caption{A blessed QED to end a blessed proof}
+\end{figure}
+
+ \vfill\eject
+ \clearpage
+ \end{Questions}
+ 

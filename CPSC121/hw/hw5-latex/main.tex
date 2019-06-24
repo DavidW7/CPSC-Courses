@@ -1,0 +1,115 @@
+\documentclass[a4paper, 20pt,fleqn]{article}
+
+\usepackage{hyperref}
+\usepackage{eqarrays}
+\usepackage{fancyvrb}
+\usepackage{graphicx}
+
+\usepackage[utf8]{inputenc}
+\usepackage{jeffe}
+\usepackage{handout}
+\usepackage{aurical}
+\usepackage[T1]{fontenc}
+\def\mle{$\le$}
+\def\ith{$i^{\textrm\scriptsize th}$}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning,chains,fit,shapes,calc}
+
+\newcommand{\fillinMC}[1]{\fillinMCmath{\mbox{#1}}}
+\newcommand{\fillinMCmath}[1]{\begin{tikzpicture}\draw circle [radius=0.5em];\end{tikzpicture}\ #1}
+\newcommand{\fillinMCAll}[1]{\fillinMCAllmath{\mbox{#1}}}
+\newcommand{\fillinMCAllmath}[1]{\begin{tikzpicture}\draw (0,0) rectangle (1em,1em);\end{tikzpicture}\ #1}
+\newcommand{\fillinblank}[1]{\fillinblankmath{\mbox{#1}}}
+\newcommand{\fillinblankmath}[1]{\begingroup\setlength{\fboxsep}{1em}\setlength{\fboxrule}{2pt}\fbox{\LARGE\phantom{#1}}\endgroup}
+\newcommand{\answerbox}[1][3\baselineskip]{%
+    \noindent\setlength{\fboxrule}{2pt}\framebox[0.4\linewidth]{%
+        \raisebox{2pt}[0pt][#1]{}%
+    }\par\medskip%
+}
+%
+% The document.
+%
+
+\begin{document}
+\headers{CPSC 121}{ }{Summer, 2019}
+
+\begin{center}
+    \LARGE
+    \textbf{HW 5}
+    \\[1ex]
+    \Large Due: 23:00, Wednesday, June 19, 2019  \\
+\end{center}
+    \LARGE
+\begin{tabular}{rl}
+ & \\
+CS ID 1: &  d6a2b\\
+ & \\
+CS ID 2: & b9i2b\\
+ & \\
+\end{tabular}
+\large
+
+\noindent\textbf{\LARGE Instructions:}
+\begin{enumerate}
+\item Do not change the problem statements we are giving you. Simply add your solutions by editing this latex document. To make it easier for the TAs to find your solutions, please use the \textbf{soln} environment we provided as follows:
+\begin{soln}
+\begin{verbatim}
+    \begin{soln}
+    My solution is here.
+    \end{soln}
+\end{verbatim}
+\end{soln}
+Your solution will then appear in blue, and be easier to differentiate from the questions.
+\item Include formatting to clearly distinguish your solutions from the given problem text. Improperly or insufficiently typeset submissions will receive a penalty.
+\item If you need more space, add a page between the existing pages using the \texttt{\textbackslash newpage} command.
+\item Export the completed assignment as a PDF file for upload to Gradescope.
+\item On Gradescope, upload only \textbf{one} copy per partnership. (Instructions for uploading to Gradescope are posted on the assignments page of the course website.)
+\item During submission, for each question, please link ALL pages on which your solution appears. Submissions with several linking errors will incur a small penalty.
+\item Late submissions will be accepted up to 24 hours past the deadline with a penalty of 20\% of the assignment’s maximum value
+\end{enumerate}
+
+\noindent\textbf{\LARGE Academic Conduct:} 
+I certify that my assignment follows the academic conduct rules for of CPSC 121 as outlined on the course website. As part of those rules, when collaborating with anyone outside my group, (1) I and my collaborators took no record but names away, and (2) after a suitable break, my group created the assignment I am submitting without help from anyone other than the course staff. \\
+
+\textbf{Version history:}
+\begin{itemize}
+    \item 2019-06-16 11:58 -- Bug corrected in Q6 ALU diagram, Q2 hint updated
+    \item 2019-06-11 18:28 -- Initial version for release
+\end{itemize} 
+
+\usepackage{tikz}
+
+\newpage
+\normalsize
+
+\newpage
+
+\begin{Questions}
+\input{prologue.tex}
+\newpage
+\end{Questions}
+
+\begin{question}{1.}[10]
+
+\input{prob1.tex}
+\begin{Questions}
+\newpage
+\end{Questions}
+
+\input{prob2.tex}
+\begin{Questions}
+\newpage
+\end{Questions}
+
+\input{prob3.tex}
+
+\input{prob4.tex}
+
+\input{prob5.tex}
+
+\input{prob6.tex}
+
+\end{question}
+
+\end{document}
