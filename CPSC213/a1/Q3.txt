@@ -1,0 +1,2 @@
+AB0101AB
+Generalize: if we pair the first and last bytes, second and second-last bytes, third and third-last bytes... and if all the pairs have identical values, then it's the same in both big- and little-endian.

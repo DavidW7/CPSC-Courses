@@ -1,0 +1,4 @@
+Intel processors uses little-endian, while communication devices, possibly the Hubble, uses big-endian. 
+521829 = 0x0007f665
+-2256461 = 0xFFDD91B3
+Correct values: 65f60700, b391ddff

@@ -1,0 +1,90 @@
+I tested a few cases, and I have the code print output in hex as well (it printed in decimal in starter code and I didn't want to modify that):
+
+Base case, no 1 in front: 
+input: 
+java Endianness 01 02 03 04
+output:
+big endian in hex: 1020304
+little endian in hex: 4030201
+Memory Contents
+  Addr   Value
+    0:   0x1
+    1:   0x2
+    2:   0x3
+    3:   0x4
+The big    endian integer value at address 0 is 16909060
+The little endian integer value at address 0 is 67305985
+
+Exception, not long enough: 
+input: 
+java Endianness 01 02 03
+output:
+usage: java Endianness n0 n1 n2 n3
+where: n0..n3 are byte values in memory at addresses 0..3 respectively, in hex (no 0x).
+
+Exception, not number:
+input: 
+java Endianness gf 01 02 03
+output:
+usage: java Endianness n0 n1 n2 n3
+where: n0..n3 are byte values in memory at addresses 0..3 respectively, in hex (no 0x).
+
+Should take only first 4 values: 
+input: 
+java Endianness 01 02 03 04 05
+output:
+big endian in hex: 1020304
+little endian in hex: 4030201
+Memory Contents
+  Addr   Value
+    0:   0x1
+    1:   0x2
+    2:   0x3
+    3:   0x4
+The big    endian integer value at address 0 is 16909060
+The little endian integer value at address 0 is 67305985
+
+Some 1 in front: 
+input: 
+java Endianness fe 01 fa 04
+output:
+big endian in hex: fe01fa04
+little endian in hex: 4fa01fe
+Memory Contents
+  Addr   Value
+    0:   0xfe
+    1:   0x1
+    2:   0xfa
+    3:   0x4
+The big    endian integer value at address 0 is -33424892
+The little endian integer value at address 0 is 83493374
+
+All 1 in front: 
+input: 
+java Endianness fa 8b a1 b4
+output:
+big endian in hex: fa8ba1b4
+little endian in hex: b4a18bfa
+Memory Contents
+  Addr   Value
+    0:   0xfa
+    1:   0x8b
+    2:   0xa1
+    3:   0xb4
+The big    endian integer value at address 0 is -91512396
+The little endian integer value at address 0 is -1264481286
+
+Palindrome: 
+input: 
+java Endianness fa 01 10 af
+output:
+big endian in hex: fa0110af
+little endian in hex: af1001fa
+Memory Contents
+  Addr   Value
+    0:   0xfa
+    1:   0x1
+    2:   0x10
+    3:   0xaf
+The big    endian integer value at address 0 is -100593489
+The little endian integer value at address 0 is -1357905414
