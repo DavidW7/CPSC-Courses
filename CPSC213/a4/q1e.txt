@@ -1,0 +1,1 @@
+Print flag for the number was %s, which is for string. Changing it to %d or %u should make it work.
