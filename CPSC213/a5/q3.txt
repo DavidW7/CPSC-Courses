@@ -1,0 +1,1 @@
+In main, line 24, tree_insert_node(t, list_node_get_element(n)) insert reference to some element that exist in list l into tree t, so in line 28, when list_delete(l), all elements in list l were freed, so that causes the pointers in tree t that points that the same elements that exist in list l to become dangling pointers. So, in line 30, tree_ordered_print(t) prints out garbage.

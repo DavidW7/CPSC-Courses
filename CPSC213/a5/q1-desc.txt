@@ -1,0 +1,16 @@
+Read:
+i, line 7
+a, line 9
+*a, line 10
+a->x[i], line 11
+a->b.y[i], line 22
+a->b.a, line 33
+a->b.a->x[i], line 34
+a->b.a->b.y[i], line 52
+
+Write:
+v0, line 13
+v1, line 24
+v2, line 36
+a->b.a, line 42
+v3, line 54
