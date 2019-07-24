@@ -14,6 +14,8 @@ part1:			ld 4(r4), r1			# r1 = s->grade[0]
 				add r2, r1				# r1 = s->grade[0] + s->grade[1] + s->grade[2]
 				ld 16(r4), r2			# r2 = s->grade[3]
 				add r2, r1				# r1 = sum(s->grade)
+				ld $2, r2				# r2 = 2 = half the divisor
+				add r2, r1				# r1 = sum(s->grade) corrected for rounding
 				shr $2, r1 				# r1 = sum(s->grade)/4 = mean(s->grade)
 				st r1, 20(r4)			# s->average = r1
 part2:			beq r3, pt6start_i		# start sort if no more students left
@@ -21,7 +23,6 @@ part2Loop:		dec r3					# r3 = i - 1 = current student left
 				ld $24, r1				# r1 = 24, size of struct
 				add r1, r4				# r0 = (s + 6)	
 				br part1				# find next student average
-pt6start_i:		halt
 
 # end of finding average, reload registers
 # don't override: r2 = j, r3 = i 
@@ -104,7 +105,7 @@ pt7:			ld $n, r3				# r3 = &n
 				st r0, (r1)				# m = r0
 				halt
 
-.pos 0x200
+.pos 0x300
 # encapsulated swap
 swapPt3:		ld $-4, r0 				# r0 = -4
 				add r0, r5				# move back 1 int to store return
@@ -132,7 +133,7 @@ endLoopSwap:	ld (r1), r7				# r1 = a.sid, move last number not moved in loop
 
 .pos 0x1000
 # heap
-n: 				.long 3					# just one student
+n: 				.long 5					# just one student
 m: 				.long 0 				# put the answer here
 s: 				.long baseS 			# address of the array of students
 .pos 0x1100
@@ -155,9 +156,36 @@ testooS:		.long 1232				# student ID , this guy is median
  				.long 78 				# grade 2
  				.long 90 				# grade 3
  				.long 0 				# computed average
+testoooS:		.long 1235				# student ID 
+ 				.long 78 				# grade 0
+ 				.long 60 				# grade 1
+ 				.long 78 				# grade 2
+ 				.long 90 				# grade 3
+ 				.long 0 				# computed average
+testoo0oS:		.long 1236				# student ID 
+ 				.long 90 				# grade 0
+ 				.long 60 				# grade 1
+ 				.long 78 				# grade 2
+ 				.long 90 				# grade 3
+ 				.long 0 				# computed average
 				
 .pos 0x2000
 # stack
+				.long 0					# stack
+				.long 0					# stack
+				.long 0					# stack
+				.long 0					# stack
+				.long 0					# stack
+				.long 0					# stack
+				.long 0					# stack
+				.long 0					# stack
+				.long 0					# stack
+				.long 0					# stack
+				.long 0					# stack
+				.long 0					# stack
+				.long 0					# stack
+				.long 0					# stack
+				.long 0					# stack
 ye:				.long 0					# stack
 yee:			.long 0					# stack
 yeee:			.long 0					# stack

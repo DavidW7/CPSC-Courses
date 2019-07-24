@@ -10,7 +10,7 @@
                  ld   (r5), r0				# r0 = (r5) = c
                  ld   4(r5), r1				# r1 = 4(r5) = d
                  ld   $0x100, r2          	# r2 = 0x100 
-                 ld   (r2), r2				# r2 = 0x01000 = address to e[10]
+                 ld   (r2), r2				# r2 = 0x01000 = address to f[10]
                  ld   (r2, r1, 4), r3       # r3 = e[d]
                  add  r3, r0              	# r0 = c + e[d]
                  st   r0, (r2, r1, 4)     	# e[d] = r0
@@ -47,7 +47,7 @@
                  ld   $12, r0				# r0 = 12
                  add  r0, r5             	# deallocate stack 
                  j    (r6)					# return
-.pos 0x1000									# int e[10]
+.pos 0x1000									# int f[10]
                  .long 0
                  .long 0
                  .long 0
