@@ -1,0 +1,2 @@
+For each 1 in the binary form of b, multiply a by 2^(position of that 1 in b) and add it to c. 
+In other words, c is the sum of a * 2^(position of 1 in b), for all 1s in b's binary form.
