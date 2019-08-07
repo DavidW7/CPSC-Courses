@@ -1,0 +1,21 @@
+{
+   uthread: thread structures
+   Memcheck:Leak
+   match-leak-kinds: possible,reachable
+   fun:malloc
+   fun:uthread_alloc
+}
+{
+   uthread: thread stacks
+   Memcheck:Leak
+   match-leak-kinds: possible,reachable
+   fun:malloc
+   fun:uthread_new_thread
+}
+{
+   uthread: pthread TLS
+   Memcheck:Leak
+   match-leak-kinds: possible,reachable
+   fun:calloc
+   fun:allocate_dtv
+}
