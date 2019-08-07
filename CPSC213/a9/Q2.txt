@@ -1,0 +1,5 @@
+time ./sRead 10 -> 0.016s
+time ./sRead 100 -> 0.016s
+time ./sRead 1000 -> 0.019s
+Asynchronize read sets off multiple disk reads at once, and lets ISR handle adding the individual results to sum. I have a counter that counts whether all the asynchronous reading and summing are done, and print after counter reaches totally reads. 
+This method is much faster since I dont need to wait for each read to be done to continue. All the reads can happen at once, so time between 10- and 100-reads cases are similar, and increases only slightly in 1000-reads case due to need for more computing power.

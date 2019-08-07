@@ -1,0 +1,6 @@
+time ./sRead 10 -> 0.026s
+time ./sRead 100 -> 0.125s
+time ./sRead 1000 -> 1.039s
+Thread read works similar to asynchronous read, but masked with threads. A thread is created for each disk read. Main thread blocks itself when all the read threads are created. While it is reading, the thread blocks itself and the ISR unblocks the thread when read is done. Each thread then adds its result to sum. To be consistent with async implementation, I used a counter, and checked whether all the read threads have executed. If yes, main thread gets unblocked and sum gets printed.
+It's also possible to use join and yield instead of block and unblock, and array of thread instead of counter, but I wanted to be consistent with async implementation.
+This is fast, because of the thread control block ensures another read thread can start executing immediately after the other read thread blocks itself to wait for read to finish. Since we're alloting single processor, it makes sense that time scales approximately linear since there's only one queue all the threads can use. All the thread has to line up to use it.

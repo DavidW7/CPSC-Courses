@@ -1,0 +1,6 @@
+time ./sRead 10 -> 0.114s
+time ./sRead 100 -> 1.104s
+time ./sRead 1000 -> 10.999s
+Synchronize read ask the number from disk and wait for the disk to return value before it continues. Only one thing can be read at a time.
+Since wait time is constant for each read, linear change in amount of numbers read will cause linear change in time taken.
+Increase of blocks to read in multiple of 10 would also increase time taken in approximately multiple of 10.
