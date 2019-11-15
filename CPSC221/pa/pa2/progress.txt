@@ -1,0 +1,31 @@
+part1 failed tests:
+none
+part1 todo:
+undo hacky way of solving [deque::resizing pushpopL]
+
+part2 passed tests: 
+colorPicker::basic dot (1.0/1.0)
+colorPicker::basic solid (1.0/1.0)
+colorPicker::basic fade (1.0/1.0)
+fill::basic solid bfs (1.0/1.0)
+fill::new solid bfs (1.0/1.0)
+fill::sparse solid bfs (1.0/1.0)
+
+part2 failed tests: (14 tests)
+fill::basic dot dfs (0.0/1.0)
+fill::basic solid dfs (0.0/1.0)
+fill::new fade bfs (0.0/1.0)
+fill::basic fade dfs (0.0/1.0)
+fill::basic dot bfs (0.0/1.0)
+fill::basic fade bfs (0.0/1.0)
+fill::new dot dfs (0.0/1.0)
+fill::new dot bfs (0.0/1.0)
+fill::new solid dfs (0.0/1.0)
+fill::dense solid dfs (0.0/1.0)
+fill::dense solid bfs (0.0/1.0)
+fill::intermed solid bfs (0.0/1.0)
+fill::intermed solid dfs (0.0/1.0)
+fill::sparse solid dfs (0.0/1.0)
+part2 todo:
+generate customDFS.gif customBFS.gif
+debug
