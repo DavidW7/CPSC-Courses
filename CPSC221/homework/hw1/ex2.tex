@@ -1,0 +1,228 @@
+\item (16 points) In this problem, you will be a math detective! Some of the symbols and functions may not be familiar to you, but with a little digging, reading, and observing, you'll be able to figure them out. Your task is to 
+    simplify each of the following expressions as much as possible, \textbf{without
+    using a calculator (either hardware or software)}. Do not approximate.
+    Express all rational numbers as improper fractions.
+    You may assume that $n$ is an integer greater than $1$.
+%    Note that $\lg n$ is shorthand for $\log_2 n$.
+    Show your work in the space provided, and write your final answer in the box.
+ 
+    \begin{enumerate}
+    % Sums of arithmetic series
+        \item \begin{enumerate}
+  
+        		\item $3 + 6 + 9 + 12 + \dots + 3n$
+                \hfill
+                \begin{tabular}{|l|c|}
+                    \hline
+                    Answer for (\theenumii.\theenumiii): & $(3/2)n(n+1)$ \\ \hline
+                \end{tabular}
+                \\
+                \\ We can use induction to prove $S_{n}$ = $\sum_{i=1}^n i$ = 1+...+n = n(n+1)/2
+                \\ Base case where n=1:
+                \\ LHS: 1 = 1
+                \\ RHS: 1(1+1)/2 = 1
+                \\ For inductive hypothesis, assuming n=n case is true. 
+                \\ For inductive step, ie n=n+1 case:
+                \\ LHS: 1+...+n+n+1 = $S_{n}$+(n+1)
+                \\ RHS: (n+1)(n+2)/2 = (1/2)((n+1)n+(n+1)2) = $S_{n}$+(2n+2)/2 = $S_{n}$+(n+1)
+                \\ Therefore, we have proved $\sum_{i=1}^n i$ = 1+...+n = n(n+1)/2 is true.
+                \\
+                \\ Therefore we can say that:
+                \\ $= 3+...+3n$
+                \\ $= 3(1+...+n) $
+                \\ $= (3/2)n(n+1)$
+                \\
+               \item $\displaystyle\sum_{i=1}^n (3 + 4i)$
+                \hfill
+                \begin{tabular}{|l|c|}
+                    \hline
+                    Answer for (\theenumii.\theenumiii): & $n(2n+5)$ \\ \hline
+                \end{tabular}
+                \\
+                \\$ = \sum_{i=1}^n 3 + 4\sum_{i=1}^n i$
+                \\$ = 3n + 4(n(n+1)/2)$
+                \\$ = n(2n+5)$
+                \vfill
+
+               \end{enumerate}
+
+\newpage
+
+    % Sums of geometric series
+        \item \begin{enumerate}
+                \item $\displaystyle\sum_{r=2}^\infty\left(\frac{3}{5}\right)^r$
+                \hfill
+                \begin{tabular}{|l|c|}
+                    \hline
+                    Answer for (\theenumii.\theenumiii): & $\displaystyle{\frac{9}{10}}$ \\ \hline
+                \end{tabular}
+                \\ 
+                \\We can prove that $S_{n} =  \sum_{r=0}^n\left(a\right)^r = a^{0}+...+a^{n}$, by saying that:
+                \\$aS_{n} = a^{1}+...a^{n+1}$
+                \\$aS_{n}-S_{n} = a^{n+1} - a^{0}$
+                \\$S_{n} = (a^{n+1} - 1)/(a-1)$
+                \\
+                \\Additionally, if n = $\infty$, and a is less than 1, we can take the limit of the summation to infinity to solve:
+                \\$=lim_{n->\infty}S_{n}$
+                \\$=lim_{n->\infty}S_{n}$
+                \\$=lim_{n->\infty}(a^{n+1} - 1)/(a-1)$
+                \\$=-1/(a-1)$
+                \\$=1/(1-a)$
+                \\
+                \\Therefore we can say that:
+                \\$= \sum_{r=2}^\infty\left(\frac{3}{5}\right)^r$
+                \\$= \sum_{r=0}^\infty\left(\frac{3}{5}\right)^r - (\frac{3}{5})^0 - (\frac{3}{5})^1 $
+                \\$= -1/(\frac{3}{5}-1) - (\frac{3}{5})^0 - (\frac{3}{5})^1 $
+                \\$= \frac{5}{2} - \frac{8}{5} $
+                \\$= \frac{9}{10}$
+                \vfill
+
+        		\item $\displaystyle\sum_{r=(-2)}^n\left(\frac{1}{n}\right)^r$
+                \hfill
+                \begin{tabular}{|l|c|}
+                    \hline
+                    Answer for (\theenumii.\theenumiii): & $\displaystyle{\displaystyle\frac{n^{-n} + n^3 - 2n}{1-n}}$ \\ \hline
+                \end{tabular}
+                \\ 
+                \\ $=\sum_{r=(-2)}^n\left(\frac{1}{n}\right)^r$
+                \\ $=\sum_{r=0}^n\left(\frac{1}{n}\right)^r + (\frac{1}{n})^{-2} + (\frac{1}{n})^{-1} $
+                \\ $=((\frac{1}{n})^{n+1} - 1)/(\frac{1}{n}-1) + (\frac{1}{n})^{-2} + (\frac{1}{n})^{-1} $
+                \\ $=(n^{(-n-1)} - 1)/(\frac{1-n}{n}) + n^{2} + n $
+                \\ $=\displaystyle\frac{n^{-n} - n}{1-n} + n^{2} + n $
+                \\ $=\displaystyle\frac{n^{-n} + n^3 - 2n}{1-n}$
+                
+                \vfill
+                
+                \end{enumerate}
+                
+                \newpage
+    % Sum that arises in calculating running time of heapify.
+        \item \begin{enumerate}\item $\displaystyle\sum_{k=1}^{n} k2^{n-k}$
+                \hfill
+                \begin{tabular}{|l|c|}
+                    \hline
+                    Answer for (\theenumii.\theenumiii): & $\displaystyle {2^n -(3+\frac{n}{2})}$ \\ \hline
+                \end{tabular}
+                \\ 
+                \\Say $S_{n} = \sum_{k=1}^{n} \displaystyle\frac{k}{2^k}$, we can use a proof method similar to b.i to simplify:
+                \\$S_{n}=\frac{1}{2^1}+\frac{2}{2^2}...+\frac{n}{2^n}$
+                \\$S_{n}/2 = \frac{1}{2^2}+\frac{2}{2^3}...+\frac{n}{2^{n+1}}$
+                \\$S_{n}-S_{n}/2=(\frac{1}{2^1}+\frac{2}{2^2}...+\frac{n}{2^n})-(\frac{1}{2^2}+\frac{2}{2^3}...+\frac{n}{2^{n+1}})$
+                \\$S_{n}-S_{n}/2=\sum_{i=2}^{n-1}(\frac{1}{2})^i + \frac{1}{2} - \frac{n}{2^{n+1}}$
+                \\$S_{n}-S_{n}/2=\sum_{i=0}^{n}(\frac{1}{2})^i - (\frac{1}{2})^n -(\frac{1}{2})^0 -(\frac{1}{2})^1 + \frac{1}{2} - \frac{n}{2^{n+1}}$
+                \\Using the equation derived in b.i, we can say that $\sum_{i=0}^{n}(\frac{1}{2})^i = \displaystyle\frac{\frac{1}{2}^{n+1} - 1}{\frac{1}{2}-1}$, and further simplify:
+                \\$S_{n}-S_{n}/2=\displaystyle\frac{\frac{1}{2}^{n+1} - 1}{\frac{1}{2}-1} - (\frac{1}{2})^n -(\frac{1}{2})^0 -(\frac{1}{2})^1 + \frac{1}{2} - \frac{n}{2^{n+1}}$
+                \\$S_{n}=\displaystyle 2 (\frac{\frac{1}{2}^{n+1} - 1}{\frac{1}{2}-1} - (\frac{1}{2})^n -(\frac{1}{2})^0 -(\frac{1}{2})^1 + \frac{1}{2} - \frac{n}{2^{n+1}})$
+                \\$S_{n}=\displaystyle 2 (-(\frac{1}{2})^{n+1} +2 - (\frac{1}{2})^n -(\frac{1}{2})^0 -(\frac{1}{2})^1 + \frac{1}{2} - \frac{n}{2^{n+1}})$
+                \\$S_{n}=\displaystyle 1-(3+\frac{n}{2})(\frac{1}{2})^n$
+                \\
+                \\Therefore, we can solve this question as:
+                \\$=\sum_{k=1}^{n} k2^{n-k}$
+                \\$=\sum_{k=1}^{n} k\displaystyle\frac{2^{n}}{2^k}$
+                \\$=2^n (\displaystyle 1-(3+\frac{n}{2})(\frac{1}{2})^n)$
+                \\$=2^n -(3+\frac{n}{2})$
+                \\
+
+%        \newpage
+        \vfill
+        
+        \item $\displaystyle\prod_{k=0}^{n} (1+a^{2^k})$ \hspace{1cm} (Hint: Try multiplying by $(1-a)$.)\\
+        \vspace{0.25in}
+         
+                \hfill \begin{tabular}{|l|c|}
+                    \hline
+                    Answer for (\theenumii.\theenumiii): & $\displaystyle{(1-a^{2^{n+1}})/(1-a)} $\\ \hline
+                \end{tabular}
+                \\ We can use induction to prove that $\displaystyle\prod_{k=0}^{n} (1+a^{2^k}) = (1-a^{2^{n+1}})/(1-a)$
+                \\For base case where n = 0:
+                \\ LHS: $\prod_{k=0}^{0} (1+a^{2^k}) = (1+a^{2^0}) = 1+a$
+                \\ RHS: $(1-a^{2^{0+1}})/(1-a) = (1-a^2)/(1-a) = (1+a)(1-a)/(1-a) = 1+a$
+                \\For induction hypothesis, we assume n=n case is true.
+                \\For induction step, we prove n=n+1 case:
+                \\ LHS: $\prod_{k=0}^{n+1} (1+a^{2^k}) = (1+a^{2^{n+1}})\prod_{k=0}^{n} (1+a^{2^k}) = (1+a^{2^{n+1}})(1-a^{2^{n+1}})/(1-a)$
+                \\ RHS: $ (1-a^{2^{(n+1)+1}})/(1-a) = (1+a^{2^{n+1}})(1-a^{2^{n+1}})/(1-a)$
+                
+        \end{enumerate}
+        
+        \vfill     
+\newpage
+        \item \begin{enumerate}
+        % mod
+        		\item $\displaystyle7^{333} \bmod 10$
+                \hfill
+                \begin{tabular}{|l|c|}
+                    \hline
+                    Answer for (\theenumii.\theenumiii): & {7} \\ \hline
+                \end{tabular}
+                \\ 
+                \\ $=7^{333} \bmod 10$
+                \\ $=7^{4*83+1} \bmod 10$
+                \\ $=((2401 \bmod 10)^{83} \bmod 10) *{7 \bmod 10}$
+                \\ $=(1 \bmod 10)*{7 \bmod 10}$
+                \\ = 7
+                %TODO sketchy math
+ 
+               
+                \vfill
+                \item $\displaystyle 16^{333} \bmod 14$
+                \hfill
+                \begin{tabular}{|l|c|}
+                    \hline
+                    Answer for (\theenumii.\theenumiii): & {8} \\ \hline
+                \end{tabular}
+                \\ 
+                \\$= 16^{333} \bmod 14$
+                \\$= (16 \bmod 14)^{333} \bmod 14$
+                \\$= 2^{333} \bmod 14$
+                \\$= 2^{9*37} \bmod 14$
+                \\ $=(512 \bmod 14)^{37} \bmod 14$ 
+                \\ $=8^{37} \bmod 14$ 
+                \\ $=8^{3*12+1} \bmod 14$ 
+                \\ $=(512 \bmod 14)^{12} \bmod 14 * (8^1 \bmod 14)$ 
+                \\ $=8^{13} \bmod 14$
+                \\ $=8^{3*4+1} \bmod 14$
+                \\ $=(512 \bmod 14)^{4} \bmod 14 * (8^1 \bmod 14)$
+                \\ $=8^{4+1} \bmod 14$
+                \\ $=8^{3+2} \bmod 14$
+                \\ $=(512 \bmod 14)^{1} \bmod 14 * (8^2 \bmod 14)$
+                \\ $=8^{1+2} \bmod 14$
+                \\ $=512 \bmod 14$
+                \\ = 8
+                \\
+                \\ We could also notice that $8^n$ mod 14 is always 8.
+                
+                \\
+                \vfill
+                \end{enumerate}
+\newpage
+
+        \item \begin{enumerate}
+        % log
+        \item $\displaystyle32^{(\log_2 n)/4}$
+                \hfill
+                \begin{tabular}{|l|c|}
+                    \hline
+                    Answer for (\theenumii.\theenumiii): & {$n^{5/4}$} \\ \hline
+                \end{tabular}
+                \\ 
+                \\ $=32^{(\log_2 n)/4}$
+                \\ $=2^{5(\log_2 n)/4}$
+                \\ $=n^{5/4}$
+                \vfill
+
+        \item $\displaystyle\frac{\log_{512} n}{\log_{2} n}$
+                \hfill
+                \begin{tabular}{|l|c|}
+                    \hline
+                    Answer for (\theenumii.\theenumiii): & {1/9} \\ \hline
+                \end{tabular}
+                \\ 
+                \\$=\displaystyle\frac{\log_{512} n}{\log_{2} n}$
+                \\$=\displaystyle\frac{\frac{\log_{2} n}{\log_{2} 512}}{\log_{2} n}$
+                \\$=\displaystyle\frac{1}{\log_{2} 512}$
+                \\= 1/9
+                
+                
+                \vfill
+    \end{enumerate}\end{enumerate}
+\newpage

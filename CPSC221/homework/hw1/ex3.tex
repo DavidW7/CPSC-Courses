@@ -1,0 +1,56 @@
+
+\item (9 points)
+\begin{enumerate}
+     \item (2 points) Fill in the blanks:
+     
+     Theorem: For any $c\in$  $\underline{\mathbb{Z}}$, and for any $n\in$ $\underline{2^m, m \in \mathbb{Z^{+}}}$, there exists a $k\in\mathbb{Z}$ so that $\displaystyle c^n-1 = k\cdot(c-1)$.
+     \\
+
+    \item (3 points) Prove the theorem from the previous part.
+    \\
+    \\We'll use induction to prove this:
+    \\
+    \\Base case where m = 0, n = $2^0$ = 1:
+    \\LHS = $c^n-1 = c^1-1 = 0$
+    \\RHS = $k\cdot(c-1) = k\cdot(1-1) = k\cdot0$
+    \\Since any number multiplied by 0 is 0, k can be any number, thus there exist at least one k where it is an integer.
+    \\
+    \\As induction hypothesis, we'll assume that $\displaystyle A_{tru} = c^{n_{tru}}-1 = k_{tru}\cdot(c-1)$ is always true for m = m, n = $2^m$ case.
+    \\
+    \\ For inductive step, we'll say $m_{ind} = m_{tru}+1, n_{ind} = 2^{m_{ind}} = 2^{m_{tru}+1}$. From this, we can simplify the LHS:
+    \\LHS = $\displaystyle c^{n_{ind}}-1 = c^{2^{m_{tru}+1}}-1= (c^{2^{m_{tru}}}+1)(c^{2^{m_{tru}}}-1) = (c^{2^{m_{tru}}}+1)A_{tru}$
+    \\ Then, we can equate LHS and RHS to isolate $k_{ind}$ as:
+    \\ $k_{ind} = (c^{2^{m_{tru}}}+1)A_{tru}/(c-1) = (c^{2^{m_{tru}}}+1)k_{tru}$
+    \\
+    \\ Since we know that $c, k_{tru}, m_{tru}$ are integers, we can say that $k_{ind}$ has to be integer since any integer multiplied, added, or powered by any integer always result in an integer.
+    \\$\boxed{}$
+    \\
+    \item (4 points) Prove that $\displaystyle 5^n\cdot2^{2n} - 1$ is divisible by $19$.
+    \\
+    \\Before proving this, we first have to constrain n as any positive integer, since integer (such as 5 and 2) are not guaranteed to result in an integer if powered by a fraction or a negative number. 
+    \\\\We can simplify the statement further by simplifying the equation:
+\\$= 5^n\cdot2^{2n} - 1 $\\$= 5^n\cdot2^{2^{n}} - 1 $\\$= 5^n\cdot4^n - 1 $\\$= 20^n - 1$ 
+    \\Therefore, the statement we're trying to prove is:
+    \\
+    \\$\forall n \in \mathbb{Z}^{+}, (20^n - 1)\mod19 = 0$
+    \\
+    \\ After this constraint, we can use induction to prove this:
+    \\
+    \\Base case, where n = 0:
+\\$= 20^n - 1 $\\$= 20^0 - 1 $\\$= 1 - 1 $\\$= 0$
+\\0 mod anything is 0, therefore the statement is true for base case.
+\\
+\\For induction hypothesis, we'll assume that for $A_{tru} = 20^{n_{tru}} - 1$, $A_{tru} \mod 19 = 0$ is always true for $n = n_{tru}$.
+\\
+\\For induction step, we'll say that $n = n_{ind} = n_{tru} + 1$. We can substitute $n_{ind}$ into the equation and simplify as:
+\\$= 20^n - 1 $\\$= 20^{n_{ind}} - 1 $\\$= 20^{n_{tru}+1} - 1 $\\$= 20\cdot20^{n_{tru}} - 1 $\\$= (19+1)\cdot20^{n_{tru}} - 1 $\\$= (19\cdot20^{n_{tru}}) + (20^{n_{tru}} - 1) $\\$= 19\cdot20^{n_{tru}} + A_{tru}$
+\\
+\\ Since we know that any term that is a multiple of 19 will result in 0 if we apply mod 19, the first term of the equation will return 0 is mod 19 is applied. Since we assumed that $A_{tru}$ will return 0 if mod 19 is applied, we can say that the second term of the equation will also return 0 is mod 19 is applied. As a property of mod operation, if the sum of mod result of additive terms is less than the mod divisor, then the mod result of sum of the two additive terms is equals to the sum of mod result of additive terms. 
+\\
+\\Therefore, we can say that $19\cdot20^{n_{tru}} + A_{tru} = 0$, since $19\cdot20^{n_{tru}} = 0$ and $A_{tru} = 0$, prove the inductive step, and conclude that the statement is true.
+\\
+\\\boxed{}
+    
+\end{enumerate}
+    \vfill\vfill
+\newpage

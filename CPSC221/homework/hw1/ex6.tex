@@ -1,0 +1,135 @@
+ 
+\item (16 points)
+  For each C++ function below, give the tightest asymptotic upper bound that you can determine for the function's {\bf runtime}, in terms of the input parameter. Where prompted, also compute the return value of the function.  Express both runtime and return value in simplest terms.
+  For all function calls, assume that the input parameter $n \geq 1$.
+  
+  \begin{enumerate}
+  
+  \item
+    \begin{lstlisting}
+int coffee(int n) {
+   int s = n * n;
+   for (int q = 0; q < n; q++)
+      s = s - q;
+   for (int q = n; q > 0; q--)
+      s = s - q;
+   return s + 2;
+}
+\end{lstlisting}
+
+\vfill
+
+    \hfill
+    \begin{tabular}{|l|c|}
+      \hline
+      Return value for (\theenumii): & {2} \\ \hline
+    \end{tabular}
+    
+
+\hfill
+\begin{tabular}{|l|c|}
+      \hline
+     Running time of (\theenumii): & {O(n)} \\ \hline
+    \end{tabular}
+    \vskip 0.5in
+  \item
+    \begin{lstlisting}
+	int tea(int n) {
+		int r = 0;
+		for (int i = 1; i < n*n*n; i = i * 2)
+  		    r++;
+  		return r * r;
+	}
+    \end{lstlisting}
+    
+    \hfill
+    \begin{tabular}{|l|c|}
+      \hline
+      Return value for (\theenumii): &
+      ${\ceil{log_2(n^3)}^2}$ \\ \hline
+    \end{tabular}
+        \vskip 0.5in
+
+\hfill
+\begin{tabular}{|l|c|}
+      \hline
+     Running time of (\theenumii): & ${O(log(n))}$ \\ \hline
+    \end{tabular}
+    \vskip 0.5in
+  \newpage
+  \item
+    \begin{lstlisting}
+	int mocha(int n) {
+  		int r = 0;
+  		for (int i=0; i<=n; i = i+16)
+  		    for (int j=0; j<i; j++)
+  		        r++;
+  		return r;
+	}
+    \end{lstlisting}
+    
+    
+    \hfill
+    \begin{tabular}{|l|c|}
+      \hline
+      Return value for (\theenumii): & ${8\cdot\floor{n/16}\cdot(\floor{n/16}+1)}$ \\ \hline
+    \end{tabular}
+%        \vskip 0.5in
+
+\hfill
+\begin{tabular}{|l|c|}
+      \hline
+     Running time of (\theenumii): & ${O(n^2)}$ \\ \hline
+    \end{tabular}
+    \vskip 0.5in
+
+  
+  \item
+    \begin{lstlisting}
+	int espresso(int n) {
+	    int j=0;
+  		for (int k = 16; coffee(k) * mocha(k) - k <= n; k+=16) {
+  		    j++;
+    		cout << "I am having so much fun with asymptotics!" << endl;
+    	}
+	    return j;
+	}
+    \end{lstlisting}
+
+\hfill
+    \begin{tabular}{|l|c|}
+      \hline
+      Return value for (\theenumii): & ${\floor{\sqrt{n/16}}}$ \\ \hline
+    \end{tabular}
+ %       \vskip 0.5in
+
+\hfill
+    \begin{tabular}{|l|c|}
+      \hline
+      Running time of (\theenumii): & ${O(n^3)}$ \\ \hline
+    \end{tabular}
+        \vskip 0.5in
+
+    
+\newpage
+
+  \item
+    \begin{lstlisting}
+	int latte(int n) {
+	    int j = 0;
+	    for (int k = 0; k < coffee(k) * n; k++)
+	        j = j + 2;
+  		return espresso(mocha(j));
+	}
+    \end{lstlisting}
+
+    \hfill
+    \begin{tabular}{|l|c|}
+      \hline
+      Running time of (\theenumii): & ${O(n^3)}$ \\ \hline
+    \end{tabular}
+        \vskip 0.5in
+
+
+  
+  \end{enumerate}

@@ -1,0 +1,87 @@
+
+%----------------------------------------------------------------------
+\item (12 points)
+    Indicate for each of the following pairs of expressions $(f(n), g(n))$,
+    whether $f(n)$ is $O$, $\Omega$, or $\Theta$ of $g(n)$.  Prove your answers. Note, if you choose $O$ or $\Omega$, you must also show that the relationship is not $\Theta$. 
+
+    \begin{enumerate}
+        \item $\displaystyle f(n) = n\log n$, and $\displaystyle g(n) = 3n\log n - n\log (n^2 + 2)$.
+        
+                \hfill
+                \begin{tabular}{|l|c|}
+                    \hline
+                    Answer for (\theenumii): & {$f(n) = \Theta(g(n))$} \\ \hline
+                \end{tabular}
+                \\
+                \\To prove $f(n) = \Theta(g(n))$, we must prove $f(n) = O(g(n))$ and $f(n) = \Omega(g(n))$.
+                \\
+                \\ 1. To prove $f(n) = O(g(n))$, we say there is a positive c and $n_0$ such that f(n) is less than or equal to c*g(n) for all n more than or equal to $n_0$.
+                \\ This case, we can pick c = 2, $n_0$ = 100.
+                \\ f(n) = 100log(100) = 200
+                \\c*g(n) = (3(100)log(100)-100(log(10000 + 2))*2 = 399.98
+                \\Since both f(n) and g(n) tends to positive infinity from $n_0$ without any n where instantaneous speed of f(n) or g(n) equals 0, we can say that $f(n) = O(g(n))$ for this chosen c and $n_0$.
+                \\
+                \\or
+                \\
+                \\Choose c = 100 $n_0$ = 2
+                \\
+                \\ $nlog(n) $\leq$ 300nlog(n) - 100nlog(n^2 +2)$
+                \\
+                \\$0 $\leq$ 299nlog(n) - 100nlog(n^2 +2)$
+                \\
+                \\This will always be true because the term will always be positive for $n > 2$
+                \\
+        
+                \\2. To prove $f(n) = \Omega(g(n))$, we say there is a positive c and $n_0$ such that f(x) is more than or equal to c*g(x) for all n more than or equal to $n_0$.
+                \\This case, we can pick c = 1, $n_0$ = 100.
+                \\ f(n) = 100log(100) = 200
+                \\c*g(n) = 3(100)log(100)-100(log(10000 + 2) = 199.991
+                \\Since both f(n) and g(n) tends to positive infinity from $n_0$ without any n where instantaneous speed of f(n) or g(n) equals 0, we can say that $f(n) = \Omega(g(n))$ for this chosen c and $n_0$.
+                \\
+                \\Or 
+                \\Choose c = 1/3 and $n_0$ = 2
+                \\ $nlog(n) $\geq$ nlog(n) - (1/3)nlog(n^2 +2)$
+                \\$0 $\geq$ -(1/3)nlog(n^2 +2)$
+                \\
+                \\This inequality will always hold true because $-(1/3)nlog(n^2 +2)$ 
+                \\will always be negative for $n $\geq$ 2$
+                \\
+
+                \\\boxed{}
+                        
+                \item $\displaystyle f(n) =  \frac{1}{2}n^3$, and $g(n) = n^2 + 4n + 37$.
+        
+                \hfill
+                \begin{tabular}{|l|c|}
+                    \hline
+                    Answer for (\theenumii): & {$f(n) = \Omega(g(n))$} \\ \hline
+                \end{tabular}
+                
+                
+                \\
+                \\To prove $f(n) = \Omega(g(n))$, we can pick c = 1, $n_0$ = 1000.
+                \\ f(n) = $(1/2)*(1000^3) = 5*10^8$
+                \\c*g(n) = $1000^2+4000+37 = 1.004037*10^6$
+                \\Since both f(n) and g(n) tends to positive infinity from $n_0$ without any n where instantaneous speed of f(n) or g(n) equals 0, we can say that $f(n) = \Omega(g(n))$ for this chosen c and $n_0$.
+                \\
+                \\However, $f(n) = O(g(n))$ is not true because for any c and $n_0$ we pick, there will be n such that n is more than or equal to $n_0$ and f(n) is more than or equal to c*g(n). 
+                \\To prove this, we can pick any arbitrary c and $n_0$, and pick n as $2(cn_0+6)$.
+                \\1. n is always more than $n_0$ since $2(cn_0+6)$ is always more than $n_0$ where c and $n_0$ are positive real numbers.
+                \\2. We can substitute n into the equations:
+                \\f(n) = $(2(cn_0+6))^3/2 = 4((cn_0)^3+18(cn_0)^2+108(cn_0)+216) = 4c^3n_{0}^3+72c^2n_{0}^2+432cn_0+864$
+                \\c*g(n) = $c((2(cn_0+6))^2+4(2(cn_0+6))+37) = 4c^3n_{0}^2+56c^2n_0+229c$
+                \\ We can substitute f(n) and c*g(n) into the equation $f(n) \leq c*g(n)$ to check if $f(n) = O(g(n))$ is true or not:
+                \\$f(n) \leq c*g(n)$
+                \\$4c^3n_{0}^3+72c^2n_{0}^2+432cn_0+864 \leq 4c^3n_{0}^2+56c^2n_0+229c$
+                \\Very obviously, however, we can notice that each terms of f(n) is more than or equals to each terms of c*g(n). In other words:
+                \\$4c^3n_{0}^3 \geq 4c^3n_{0}^2$
+                \\$72c^2n_{0}^2 \geq 56c^2n_0$
+                \\$432cn_0 \geq 229c$
+                \\$864 \geq 0$
+                \\Therefore, the inequality is not true, and we conclusively proved that there exists n where $f(n) = O(g(n))$ is false for any c and $n_0$.
+                
+\\\boxed{}
+                
+\vfill                
+          \end{enumerate}
+\newpage

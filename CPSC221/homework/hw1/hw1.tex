@@ -1,0 +1,112 @@
+\documentclass[11pt]{article}
+\usepackage{jeffe,handout}
+%\def\rmdefault{bch} % Use Charter for main text font.
+
+
+% definitions for formatting code blocks
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{collcell}
+\newcommand{\fwcell}[1]{\makebox[\arraystretch\normalbaselineskip]{$#1$}}
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+% end definitions for formatting code blocks
+
+\def\BOX#1{\fbox{\vbox to #1{\vss\hbox to #1{\hss}}}}
+\def\Bigbox{\BOX{0.25in}}
+\def\Bigbox{\raisebox{-0.5ex}[0.25in][0pt]{\BOX{0.25in}}}
+
+\hidesolutions
+
+\renewcommand{\arraystretch}{2}
+
+% =========================================================
+\begin{document}
+
+\headers{CPSC 221~~~Winter 1, 2019}{}{ CSID1: \underline{d6a2b}, CSID2: \underline{~~~~~~~~~~~~}}
+
+\begin{center}
+    \LARGE
+    \textbf{HW 1}
+    \\[1ex]
+    \Large Due 23:59 September 13, 2019 \\
+\end{center}
+\LARGE
+\begin{tabular}{rl}
+CS ID 1: & \underline{d6a2b}\\
+CS ID 2: & \underline{z0n1b}\\
+\end{tabular}
+\large
+
+\textbf{Instructions:}
+\begin{enumerate}
+\item Do not change the problem statements we are giving you. Simply add your solutions by editing this latex document. 
+\item Take as much space as you need for each problem. You'll tell us where your solutions are when you submit your paper to gradescope. 
+\item Export the completed assignment as a PDF file for upload to gradescope.
+\item On gradescope, upload only \textbf{one} copy per partnership. (Instructions for uploading to gradescope will be posted on the HW1 page of the course website.)
+\end{enumerate}
+
+\textbf{Academic Conduct:} 
+I certify that my assignment follows the academic conduct rules for of CPSC 221 as outlined on the course website. As part of those rules, when collaborating with anyone outside my group, (1) I and my collaborators took no record but names away, and (2) after a suitable break, my group created the assignment I am submitting without help from anyone other than the course staff. \\
+\newpage
+
+\newpage
+\begin{problems}
+%----------------------------------------------------------------------
+\item (2 points)
+    Using 140 characters or less, post a synopsis of your favorite movie to the
+    course piazza space under the ``HW1 tell me something!'' notice, so that
+    your post is visible to everyone in the class, and tagged by \#HW1num1.
+    Also, use Piazza's code-formatting tools to write a {\em private} post to
+    course staff that includes at least 5 lines of code. It can be code of your
+    own or from a favorite project---it doesn't even have to be syntactically
+    correct---but it must be formatted as a code block in your post, and also
+    include the tag \#HW1num1. (Hint: Check
+    \url{http://support.piazza.com/customer/portal/articles/1774756-code-blocking}).
+    Finally, please write the two post numbers corresponding to your posts here:
+
+    \begin{table}[h]
+        \begin{center}
+            \begin{tabular}{|l|c|}
+                \hline
+                Favorite Movie Post (Public) number: & {243, 311} \\ \hline
+                Formatted Code Post (Private) number: & {473, 313} \\ \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+
+\input{ex2.tex}
+\input{ex3.tex}
+\input{ex5.tex}
+\input{ex4.tex}
+\input{ex6.tex}
+
+\end{problems}
+
+\newpage
+%----------------------------------------------------------------------
+Blank sheet for extra work.
+
+\end{document}
