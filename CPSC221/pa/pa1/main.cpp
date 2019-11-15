@@ -45,6 +45,17 @@ int main() {
   if (expected == result) cout<< "gridtest-rotateR PASSED" << endl;
   else cout << "gridtest-rotateR FAILED" << endl;
 
+  Grid g12(pngin, 4, 5);	// image, number of columns, rows.
+  //cout << "2" << '\n';
+  g12.rotateC(0, 1);
+  g12.rotateC(1, 2);
+  g12.rotateC(2, 3);
+  g12.rotateC(0, 1);
+  g12.rotateC(3, 1);
+  //cout << "3" << '\n';
+  result = g12.render();
+  result.writeToFile("images/out-main-rotateMix.png");
+
   //grid rotateC
   Grid g2(pngin,4,5);	// image, number of columns, rows.
   g2.rotateC(1, 1);	// rotate column 1 by 1
@@ -60,6 +71,8 @@ int main() {
   Grid g3(pngin,4,5);
   cout << "2" << '\n';
   Grid g3g3(g3);
+  result = g3g3.render();
+  result.writeToFile("images/checkCopy.png");
   cout << "3" << '\n';
   
   //grid puzzle

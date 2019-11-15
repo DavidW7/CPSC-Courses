@@ -20,11 +20,13 @@ class Block{
   Block(); /* default constructor GIVEN */
 
   /*------- you must implement the remaining functions -------*/
+  Block(PNG & im, int x, int y, int width, int height, int sane);
   Block(PNG & im, int x, int y, int width, int height);
   void render(PNG & im, int x, int y) const ;
   void greyscale();
   int width() const;
   int height() const;
+  int sanitycheck;
 
  private:
 

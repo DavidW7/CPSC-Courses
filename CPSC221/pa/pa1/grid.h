@@ -23,10 +23,12 @@ using namespace std;
  * that does solve the puzzle. 
  * COMPLETE FOR PA1
  */
-#define PUZZLE_SOLUTION  g.rotateR(0, 0);\
-  g.rotateC(0, 0);\
-  g.rotateR(0, 0);\
-  g.rotateC(0, 0);
+#define PUZZLE_SOLUTION   g.rotateC(1, 1);\
+  g.rotateR(2, 1);\
+  g.rotateC(2, 1);\
+  g.rotateR(0, 1);\
+  g.rotateC(2, 2);\
+  g.rotateR(2, 2);
 
 /**
  * Grid: This is a container class for blocks. It is implemented
@@ -189,13 +191,13 @@ private:
    * My helper
    * rotate right once and return new head
    */
-   Node *rotRightOnce(Node *head, int accu);
+   //Node *rotRightOnce(Node *head, int accu);
 
    /*
    * My helper
    * rotate down once and return new head
    */
-   Node *rotDownOnce(Node *head, int accu);
+   //Node *rotDownOnce(Node *head, int accu);
 
    /* =================== end of private PA1 functions ============== */
 };

@@ -39,10 +39,12 @@ Grid::Grid(PNG & im, int nCols, int nRows) {
   // Set up a temporary two-dimensional vector of ptrs to Nodes containing
   // the correct sub-blocks of the image.
   vector < vector < Node * > > A;
+  int sane = 0;
   for( int j=0; j<nRows; j++ ) {
     vector < Node * > temp;
     for( int i=0; i<nCols; i++ ) {
-      Node* p = new Node(Block(im, i*bwidth_, j*bheight_, bwidth_, bheight_));
+      Node* p = new Node(Block(im, i*bwidth_, j*bheight_, bwidth_, bheight_, sane));
+	  sane++;
       temp.push_back(p);
     }
     A.push_back(temp);
@@ -72,8 +74,8 @@ Grid::Grid(PNG & im, int nCols, int nRows) {
   }
 
   //my code
-  cout << "row size " << headOfCol_.size() << '\n';
-  cout << "col size " << headOfRow_.size() << '\n';
+  //cout << "row size " << headOfCol_.size() << '\n';
+  //cout << "col size " << headOfRow_.size() << '\n';
 }
 
 /* copy constructor */

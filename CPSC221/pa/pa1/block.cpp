@@ -39,7 +39,29 @@ Block::Block(PNG & im, int x, int y, int width, int height) {
 			//cout << "b" << '\n';
 		}
 	}
+
+	//sanitycheck = std::rand();
 }
+/*
+Block::Block(PNG & im, int x, int y, int width, int height, int sane) {
+	data.resize(width);
+	for (int i = 0; i < width; i++) {
+		data[i].resize(height);
+	}
+
+	for (int i = 0; i < width; i++) {
+		for (int j = 0; j < height; j++) {
+			//cout << i << ' ' << j << '\n';
+			HSLAPixel *temp = im.getPixel(i + x, j + y);
+			//cout << "a" << '\n';
+			data[i][j] = *temp;
+			//cout << "b" << '\n';
+		}
+	}
+
+	sanitycheck = sane;
+}
+*/
 
 /**
  * Draws the block at position (x,y) in the image im
