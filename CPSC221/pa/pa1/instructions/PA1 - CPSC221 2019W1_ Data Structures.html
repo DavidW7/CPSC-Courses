@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title> PA1 - CPSC221 2019W1: Data Structures </title>
+
+        <meta name="base_url" content="https://www.students.cs.ubc.ca/~cs-221/2019W1">
+
+        <link rel="stylesheet" media="screen" href="./PA1 - CPSC221 2019W1_ Data Structures_files/pure-min.css">
+        <link rel="stylesheet" media="screen" href="./PA1 - CPSC221 2019W1_ Data Structures_files/grids-responsive-min.css">
+
+        <link rel="stylesheet" media="screen" href="./PA1 - CPSC221 2019W1_ Data Structures_files/main.css">
+        <link rel="stylesheet" media="print" href="./PA1 - CPSC221 2019W1_ Data Structures_files/print.css">
+
+        <link rel="shortcut icon" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/favicon.ico">
+        <link rel="icon" type="image/png" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/favicon.png">
+
+        <link href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/" rel="alternate" type="application/rss+xml" title="CPSC221 2019W1: Data Structures">
+
+        <link rel="stylesheet" media="screen" href="./PA1 - CPSC221 2019W1_ Data Structures_files/highlightjs-vs.min.css">
+
+        
+
+
+<script type="text/javascript" async="" src="./PA1 - CPSC221 2019W1_ Data Structures_files/linkid.js.download"></script><script async="" src="./PA1 - CPSC221 2019W1_ Data Structures_files/analytics.js.download"></script><script type="text/x-mathjax-config;executed=true">
+            MathJax.Hub.Config({
+                    TeX: {
+                        extensions: [ "AMSmath.js", "AMSsymbols.js" ]
+                    },
+                    tex2jax: {
+                        inlineMath: [['\\(','\\)'], ['$', '$']],
+                        displayMath: [['\\[','\\]'], ['$$','$$']]
+                    },
+                });
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-1728599-5', 'auto');
+        ga('require', 'linkid');
+        ga('send', 'pageview');
+
+        </script>
+
+        
+
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body data-no-instant=""><div id="MathJax_Message" style="display: none;"></div>
+<div class="pure-g" role="navigation" id="header">
+    <div class="pure-u-1 pure-u-md-3-24 pure-u-lg-6-24">
+        <div class="pure-menu pure-menu-horizontal menu-header">
+            <a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/#" class="menu-toggle" id="menu-toggle"><i class="bar"></i><i class="bar"></i><i class="bar"></i></a>
+            <a class="pure-menu-heading" href="https://www.students.cs.ubc.ca/~cs-221/2019W1">CPSC 221</a>
+        </div>
+    </div>
+    <div class="pure-u-1 pure-u-md-21-24 pure-u-lg-18-24">
+        <div class="pure-menu pure-menu-horizontal menu-can-transform">
+            <ul class="pure-menu-list">
+            
+            
+                
+                
+                
+                    
+                
+                
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover ">
+                        <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/info/syllabus">Course Info</a>
+                        <ul class="pure-menu-children" role="menu">
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/info/staff/">Staff</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/info/assignment-faq/">Assignment FAQ</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/info/faq/">FAQ</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/info/integrity/">Academic Integrity</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/info/environment/">Computing Environment</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/info/syllabus/">Syllabus</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+                
+                
+                
+                    
+                
+                
+                    <li class="pure-menu-item ">
+                        <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/calendar">
+                            Calendar
+                        </a>
+                    </li>
+                
+            
+                
+                
+                
+                    
+                
+                
+                    <li class="pure-menu-item ">
+                        <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/lectures">
+                            Lectures
+                        </a>
+                    </li>
+                
+            
+                
+                
+                
+                    
+                
+                
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover ">
+                        <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/labs">Labs</a>
+                        <ul class="pure-menu-children" role="menu">
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/labs/graphs/">lab_graphs</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/labs/heaps/">lab_heaps</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/labs/hash/">lab_hash</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/labs/dict/">lab_dict</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/labs/avl/">lab_avl</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/labs/trees/">lab_trees</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/labs/quacks/">lab_quacks</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/labs/linkedlists/">lab_linkedlists</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/labs/debug/">lab_debug</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/labs/intro/">lab_intro</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+                
+                
+                    
+                
+                
+                    
+                
+                
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover pure-menu-selected">
+                        <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps">Assignments</a>
+                        <ul class="pure-menu-children" role="menu">
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/">PA 2</a>
+                            </li>
+                        
+                            <li class="pure-menu-item pure-menu-selected">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/">PA1</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p3/">PA3</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/h1/">Homework 1</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/h2/">Homework 2</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/h3/">Homework 3</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+                
+                
+                
+                    
+                
+                
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover ">
+                        <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/exams">Exams</a>
+                        <ul class="pure-menu-children" role="menu">
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/exams/exam2/">Midterm 2</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/exams/exam1/">Midterm 1</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/exams/">General Information</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+                
+                
+                
+                    
+                
+                
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover ">
+                        <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/resources/all">Resources</a>
+                        <ul class="pure-menu-children" role="menu">
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/resources/setup/">Course Setup</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/resources/own-machine/">On Your Own Machine</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/resources/shortcourse/">C++ Short Course</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/resources/indev-resources/">In-Dev Resources</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/resources/maketutorial/">Makefile Tutorial</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="pure-g">
+    <div class="pure-u-md-8-24 pure-u-lg-6-24" id="toc">
+        <div class="pure-u-md-8-24 pure-u-lg-6-24">
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li class=""><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/#goals-and-overview">Goals and Overview</a></li>
+<li class=""><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/#the-assignment-part-1-reading-and-understanding-the-policies">The Assignment, Part 1: Reading and Understanding the Policies</a></li>
+<li class=""><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/#the-assignment-part-2-coding">The Assignment, Part 2: Coding</a>
+<ul>
+<li class=""><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/#problem-specification">Problem Specification</a>
+<ul>
+<li><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/#in-block-cpp">In <code>block.cpp</code></a></li>
+<li><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/#in-grid-cpp">In <code>grid.cpp</code></a></li>
+<li><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/#in-grid-h">In <code>grid.h</code></a></li>
+</ul></li>
+<li class=""><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/#implementation-constraints-and-advice">Implementation Constraints and Advice</a></li>
+<li class="active visible"><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/#getting-the-given-code">Getting the Given Code</a></li>
+<li class="visible"><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/#handing-in-your-code">Handing in your code</a></li>
+</ul></li>
+<li class="visible"><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/#good-luck">Good luck!</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+    </div>
+    <div class="pure-u-1-1 pure-u-md-14-24 pure-u-lg-18-24" id="content">
+
+
+
+<div class="page-header">
+    <h1>PA1 <small>Block Grid</small></h1>
+    
+    <div class="assignment-due-final">
+            Due:
+            <ul class="due-dates">
+                <li><span class="long-date">Saturday, September 28 at 11:59 PM</span>
+<span class="short-date">9/28 @ 11:59 PM</span></li>
+                
+            </ul>
+    </div>
+    
+    
+    
+</div>
+
+
+
+
+
+<div class="alert alert-warning">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"></path></svg>
+    <strong>Lab machines</strong>
+We will be grading the PAs for this course using the remote Linux machines. Any
+errors that you run into as a result of developing your code on <a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/resources/own-machine/">other
+machines</a> are your own responsibility.
+</div>
+
+<h2 id="goals-and-overview">Goals and Overview<a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/#goals-and-overview" class="header-anchor"></a></h2>
+
+<p>In this PA (Programming Assignment) you will:</p>
+
+<ul>
+<li>learn about the course programming environment</li>
+<li>learn about vectors</li>
+<li>learn about pointers</li>
+<li>learn about linked lists</li>
+<li>learn about management of dynamic memory</li>
+</ul>
+
+<h2 id="the-assignment-part-1-reading-and-understanding-the-policies">The Assignment, Part 1: Reading and Understanding the Policies<a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/#the-assignment-part-1-reading-and-understanding-the-policies" class="header-anchor"></a></h2>
+
+<p>Read and understand the following information:</p>
+
+<ul>
+<li><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/info/syllabus/">Course Info</a></li>
+<li><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/info/collaboration/">Collaboration Policy</a></li>
+<li><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/info/style/">Coding Style Policy</a></li>
+</ul>
+
+<div class="alert alert-warning">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"></path></svg>
+    <strong>Important Information</strong>
+The information in these links is relevant to not just this PA, but every
+future PA as well, and you <strong>will</strong> be held responsible for having read and
+understood all of the information. So, part of this PA assignment is to read
+over this part 1 material, and to gain a complete understanding of it before
+moving on to part 2 of this assignment. This means that you should ASK
+QUESTIONS ON ANY OF THIS PART 1 MATERIAL THAT YOU DO NOT UNDERSTAND.
+</div>
+
+<h2 id="the-assignment-part-2-coding">The Assignment, Part 2: Coding<a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/#the-assignment-part-2-coding" class="header-anchor"></a></h2>
+
+<h3 id="problem-specification">Problem Specification<a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/#problem-specification" class="header-anchor"></a></h3>
+
+<p>A Linked List is a dynamic linear structure designed to hold any
+type of data. In this exercise, we develop and use a coordinated set of
+linked lists to manipulate blocks of pixels from an image.</p>
+
+<p>We have broken the image below into 15 <code>Block</code>s.</p>
+
+<figure style="text-align: center;">
+    
+    <img src="./PA1 - CPSC221 2019W1_ Data Structures_files/gridPhoto.png">
+    
+    
+</figure>
+
+<p>Each <code>Block</code> is placed into a <code>Node</code> of a <code>Grid</code>, as shown here:</p>
+
+<figure style="text-align: center;">
+    
+    <img src="./PA1 - CPSC221 2019W1_ Data Structures_files/gridDiagram.png">
+    
+    
+</figure>
+
+<p>Each row and each column of the <code>Grid</code> forms a circular doubly-linked list.
+The <code>Grid</code> can be rearranged, and the image reassembled to create fascinating visual results.</p>
+
+<p>We have provided a starting point for achieving this functionality. It is your task to complete and expand on
+our implementation.</p>
+
+<p>Specifications for each function you write are contained in the
+given code. The list of functions here should serve as a
+checklist for completing the exercise.</p>
+
+<h4 id="in-block-cpp">In <code>block.cpp</code><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/#in-block-cpp" class="header-anchor"></a></h4>
+
+<ul>
+<li><code>int width() const;</code> Returns the width of the block.</li>
+<li><code>int height() const;</code> Returns the height of the block.</li>
+<li><code>void Block(PNG &amp; im, int x, int y, int width, int height);</code> Makes a block from the rectangle of <code>width</code> by <code>height</code> pixels in <code>im</code> whose upper-left corner is at position <code>(x,y)</code>.</li>
+<li><code>void render(PNG &amp; im, int x, int y ) const;</code> Draws the block at position <code>(x,y)</code> in <code>im</code>.</li>
+<li><code>void greyscale();</code> Changes the saturation of every pixel in the block to 0, which removes the color, leaving grey.</li>
+</ul>
+
+<h4 id="in-grid-cpp">In <code>grid.cpp</code><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/#in-grid-cpp" class="header-anchor"></a></h4>
+
+<ul>
+<li><code>void clear();</code> Helper function for destructor and assignment operator.</li>
+<li><code>void copy(const Grid &amp; other);</code> Helper function for copy constructor and assignment operator.</li>
+<li><code>~Grid();</code> Destructor.</li>
+<li><code>rotateR(int r, int count);</code> Rotate row r by count positions.</li>
+<li><code>rotateC(int c, int count);</code> Rotate column c by count positions.</li>
+</ul>
+
+<h4 id="in-grid-h">In <code>grid.h</code><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/#in-grid-h" class="header-anchor"></a></h4>
+
+<ul>
+<li><code>PUZZLE_SOLUTION</code> The sequence of rotateR and rotateC commands to
+produce the right image from the left image shown below.
+<br></li>
+</ul>
+
+<figure style="text-align: center;">
+    
+    <img src="./PA1 - CPSC221 2019W1_ Data Structures_files/123456789.png">
+    
+    
+</figure>  <figure style="text-align: center;">
+    
+    <img src="./PA1 - CPSC221 2019W1_ Data Structures_files/given-puzzle.png">
+    
+    
+</figure>
+  
+
+<h3 id="implementation-constraints-and-advice">Implementation Constraints and Advice<a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/#implementation-constraints-and-advice" class="header-anchor"></a></h3>
+
+<p>We will be grading your work on functionality, efficiency, and memory use. All <code>Grid</code> functionality, aside from the copy function, can be achieved by moving existing nodes, rather than by allocating new ones and/or making copies. If you are tempted to use the <code>new</code> function when you are manipulating the <code>Grid</code>, ask yourself if you can achieve your goal by reassigning pointers, instead.</p>
+
+<p>The <code>Grid</code> structure is a two-dimensional circular doubly-linked list
+of <code>Node</code>s
+with two vectors of pointers to access the first <code>Node</code> in each row
+and column.  Each <code>Node</code> contains four pointers <code>up</code>, <code>down</code>, <code>left</code>,
+and <code>right</code>.  Repeatedly following the <code>right</code> pointer from <code>Node</code> to
+<code>Node</code> will visit all the <code>Node</code>s in a row and eventually return to the starting
+<code>Node</code>. The same is true of following <code>left</code> pointers; and following <code>up</code> or
+<code>down</code> pointers visits all the <code>Node</code>s in a column.</p>
+
+<p>Finally, you’ll note that we are asking you to implement special memory management functions for the <code>Grid</code> class. You should ask yourself why we have not made similar requests for the <code>Block</code> class. Why doesn’t it need a destructor, copy constructor, or assignment operator?</p>
+
+<h3 id="getting-the-given-code">Getting the Given Code<a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/#getting-the-given-code" class="header-anchor"></a></h3>
+
+<p>Download the source files from <a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/pa1.zip">pa1.zip</a>, and follow the
+procedures you learned in lab to move them to your home directory
+on the remote linux machines.</p>
+
+<h3 id="handing-in-your-code">Handing in your code<a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/#handing-in-your-code" class="header-anchor"></a></h3>
+
+<p>To facilitate anonymous grading, <strong>do not</strong> include any personally-identifiable
+information (like your name, your University ID number, or your cwl) in any
+of your source files. Instead, before you hand in this assignment,
+create a file called <code>partners.txt</code> that contains only the CSIDs of
+people in your collaboration partnership (if one exists), one per line.
+If you worked alone, include only your own
+CSID in this file.
+A computer will process this information using a simple algorithm, so do not include anything else in the file. (If we must manually correct your
+submission, you may lose points.)
+As always, if you’re working in a group, only one group member needs to hand in the assignment.</p>
+
+<p>The following files are used to grade PA1:</p>
+
+<ul>
+<li><code>block.cpp</code></li>
+<li><code>grid.cpp</code></li>
+<li><code>grid.h</code></li>
+<li><code>partners.txt</code></li>
+</ul>
+
+<p>All other files will not be used for grading.</p>
+
+<p>To submit your work for autograding, simply navigate to “PA1 – Block Grid” on <a href="https://www.gradescope.com/courses/57891">Gradescope</a> and drag and drop the files listed above.</p>
+
+<h2 id="good-luck">Good luck!<a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/#good-luck" class="header-anchor"></a></h2>
+
+
+    </div>
+</div>
+
+<div class="pure-g" id="footer">
+    <div class="pure-u-1 footer-links">
+        <ul>
+            
+            <li><a href="https://piazza.com/class/jzixhbm48yt3lq">Piazza</a></li><li><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/calendar/">Calendar</a></li>
+        </ul>
+    </div>
+    <div class="pure-u-1 footer-copyright">
+        <p>© 2019. All rights reserved. </p>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="./PA1 - CPSC221 2019W1_ Data Structures_files/jquery-2.1.3.min.js.download"></script>
+<script type="text/javascript" src="./PA1 - CPSC221 2019W1_ Data Structures_files/MathJax.js.download"></script>
+<script type="text/javascript" src="./PA1 - CPSC221 2019W1_ Data Structures_files/toc.js.download"></script>
+<script type="text/javascript" src="./PA1 - CPSC221 2019W1_ Data Structures_files/graph-load.js.download"></script>
+<script type="text/javascript" src="./PA1 - CPSC221 2019W1_ Data Structures_files/menu.js.download"></script>
+<script type="text/javascript" src="./PA1 - CPSC221 2019W1_ Data Structures_files/highlight.min.js.download"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    
+
+
+</body></html>

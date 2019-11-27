@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title> PA 2 - CPSC221 2019W1: Data Structures </title>
+
+        <meta name="base_url" content="https://www.students.cs.ubc.ca/~cs-221/2019W1">
+
+        <link rel="stylesheet" media="screen" href="./PA 2 - CPSC221 2019W1_ Data Structures_files/pure-min.css">
+        <link rel="stylesheet" media="screen" href="./PA 2 - CPSC221 2019W1_ Data Structures_files/grids-responsive-min.css">
+
+        <link rel="stylesheet" media="screen" href="./PA 2 - CPSC221 2019W1_ Data Structures_files/main.css">
+        <link rel="stylesheet" media="print" href="./PA 2 - CPSC221 2019W1_ Data Structures_files/print.css">
+
+        <link rel="shortcut icon" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/favicon.ico">
+        <link rel="icon" type="image/png" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/favicon.png">
+
+        <link href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/" rel="alternate" type="application/rss+xml" title="CPSC221 2019W1: Data Structures">
+
+        <link rel="stylesheet" media="screen" href="./PA 2 - CPSC221 2019W1_ Data Structures_files/highlightjs-vs.min.css">
+
+        
+
+
+<script type="text/javascript" async="" src="./PA 2 - CPSC221 2019W1_ Data Structures_files/linkid.js.download"></script><script async="" src="./PA 2 - CPSC221 2019W1_ Data Structures_files/analytics.js.download"></script><script type="text/x-mathjax-config;executed=true">
+            MathJax.Hub.Config({
+                    TeX: {
+                        extensions: [ "AMSmath.js", "AMSsymbols.js" ]
+                    },
+                    tex2jax: {
+                        inlineMath: [['\\(','\\)'], ['$', '$']],
+                        displayMath: [['\\[','\\]'], ['$$','$$']]
+                    },
+                });
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-1728599-5', 'auto');
+        ga('require', 'linkid');
+        ga('send', 'pageview');
+
+        </script>
+
+        
+
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body data-no-instant=""><div id="MathJax_Message" style="display: none;"></div>
+<div class="pure-g" role="navigation" id="header">
+    <div class="pure-u-1 pure-u-md-3-24 pure-u-lg-6-24">
+        <div class="pure-menu pure-menu-horizontal menu-header">
+            <a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#" class="menu-toggle" id="menu-toggle"><i class="bar"></i><i class="bar"></i><i class="bar"></i></a>
+            <a class="pure-menu-heading" href="https://www.students.cs.ubc.ca/~cs-221/2019W1">CPSC 221</a>
+        </div>
+    </div>
+    <div class="pure-u-1 pure-u-md-21-24 pure-u-lg-18-24">
+        <div class="pure-menu pure-menu-horizontal menu-can-transform">
+            <ul class="pure-menu-list">
+            
+            
+                
+                
+                
+                    
+                
+                
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover ">
+                        <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/info/syllabus">Course Info</a>
+                        <ul class="pure-menu-children" role="menu">
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/info/staff/">Staff</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/info/assignment-faq/">Assignment FAQ</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/info/faq/">FAQ</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/info/integrity/">Academic Integrity</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/info/environment/">Computing Environment</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/info/syllabus/">Syllabus</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+                
+                
+                
+                    
+                
+                
+                    <li class="pure-menu-item ">
+                        <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/calendar">
+                            Calendar
+                        </a>
+                    </li>
+                
+            
+                
+                
+                
+                    
+                
+                
+                    <li class="pure-menu-item ">
+                        <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/lectures">
+                            Lectures
+                        </a>
+                    </li>
+                
+            
+                
+                
+                
+                    
+                
+                
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover ">
+                        <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/labs">Labs</a>
+                        <ul class="pure-menu-children" role="menu">
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/labs/graphs/">lab_graphs</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/labs/heaps/">lab_heaps</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/labs/hash/">lab_hash</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/labs/dict/">lab_dict</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/labs/avl/">lab_avl</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/labs/trees/">lab_trees</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/labs/quacks/">lab_quacks</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/labs/linkedlists/">lab_linkedlists</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/labs/debug/">lab_debug</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/labs/intro/">lab_intro</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+                
+                
+                    
+                
+                
+                    
+                
+                
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover pure-menu-selected">
+                        <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps">Assignments</a>
+                        <ul class="pure-menu-children" role="menu">
+                        
+                            <li class="pure-menu-item pure-menu-selected">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/">PA 2</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p1/">PA1</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p3/">PA3</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/h1/">Homework 1</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/h2/">Homework 2</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/h3/">Homework 3</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+                
+                
+                
+                    
+                
+                
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover ">
+                        <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/exams">Exams</a>
+                        <ul class="pure-menu-children" role="menu">
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/exams/exam2/">Midterm 2</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/exams/exam1/">Midterm 1</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/exams/">General Information</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+                
+                
+                
+                    
+                
+                
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover ">
+                        <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/resources/all">Resources</a>
+                        <ul class="pure-menu-children" role="menu">
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/resources/setup/">Course Setup</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/resources/own-machine/">On Your Own Machine</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/resources/shortcourse/">C++ Short Course</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/resources/indev-resources/">In-Dev Resources</a>
+                            </li>
+                        
+                            <li class="pure-menu-item ">
+                                <a class="pure-menu-link" href="https://www.students.cs.ubc.ca/~cs-221/2019W1/resources/maketutorial/">Makefile Tutorial</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="pure-g">
+    <div class="pure-u-md-8-24 pure-u-lg-6-24" id="toc">
+        <div class="pure-u-md-8-24 pure-u-lg-6-24">
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li class="active visible"><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#goals-and-overview">Goals and Overview</a></li>
+<li class="visible"><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#getting-the-given-code">Getting the Given Code</a></li>
+<li class="visible"><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#part1">Part 1: The <code>Stack</code>, <code>Queue</code>, and <code>Deque</code> Classes</a>
+<ul>
+<li class="visible"><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#the-deque-class">The <code>Deque</code> Class</a></li>
+<li><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#the-stack-class">The <code>Stack</code> Class</a></li>
+<li><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#the-queue-class">The <code>Queue</code> Class</a></li>
+<li><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#testing">Testing</a></li>
+<li><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#grading-information-for-part-1">Grading Information for Part 1</a></li>
+</ul></li>
+<li><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#part-2-voronoi-diagrams">Part 2: Voronoi Diagrams</a>
+<ul>
+<li><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#functors">Functors</a></li>
+<li><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#the-fill-algorithms">The Fill Algorithms</a></li>
+<li><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#testing-1">Testing</a></li>
+</ul></li>
+<li><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#handing-in-your-code">Handing in Your Code</a></li>
+<li><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#grading-information">Grading Information</a></li>
+<li><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#good-luck">Good luck!</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+    </div>
+    <div class="pure-u-1-1 pure-u-md-14-24 pure-u-lg-18-24" id="content">
+
+
+
+<div class="page-header">
+    <h1>PA 2 <small>Stacks and Queues</small></h1>
+    
+    <div class="assignment-due-final">
+            Due:
+            <ul class="due-dates">
+                <li><span class="long-date">Friday, November 1 at 11:59 PM</span>
+<span class="short-date">11/1 @ 11:59 PM</span></li>
+                
+            </ul>
+    </div>
+    
+    
+    
+</div>
+
+
+
+
+
+<div class="alert alert-warning">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"></path></svg>
+    <strong>GradeScope submission</strong>
+We will be grading this PA using GradeScope. Our basic test cases will
+be run against your code every time you submit, so we encourage you to submit early
+and often! Code which does not compile will not be given any credit.
+</div>
+
+<h2 id="goals-and-overview">Goals and Overview<a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#goals-and-overview" class="header-anchor"></a></h2>
+
+<p>In this PA you will:</p>
+
+<ul>
+<li>learn about Stacks, Queues, and Deques</li>
+<li>learn about depth-first-search (DFS) and breadth-first-search (BFS) traversal</li>
+<li>learn about some more advanced C++ constructs, including basic templates and inheritance</li>
+</ul>
+
+<h2 id="getting-the-given-code">Getting the Given Code<a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#getting-the-given-code" class="header-anchor"></a></h2>
+
+<p>Download the source files from <a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/pa2.zip">pa2.zip</a>, and follow the
+procedures you learned in lab to move them to your home directory
+on the remote linux machines.</p>
+
+<h2 id="part1">Part 1: The <code>Stack</code>, <code>Queue</code>, and <code>Deque</code> Classes<a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#part1" class="header-anchor"></a></h2>
+
+<div class="alert alert-warning">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"></path></svg>
+    <strong>Template Compilation</strong>
+Note that the <code>stack.h</code>, <code>queue.h</code>, and <code>deque.h</code> files we’ve given you include the
+<code>.cpp</code> files at the end, so you should NOT
+use a <code>#include "XXX.h"</code> at the top of
+the <code>XXX.cpp</code> file. We have done it this way so that the
+template types are instantiated appropriately.
+</div>
+
+<h3 id="the-deque-class">The <code>Deque</code> Class<a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#the-deque-class" class="header-anchor"></a></h3>
+
+<p>You will write a class named <code>Deque</code> which is a modification of a doubly ended
+queue structure. While the standard deque allows for insertion and
+removal at both ends of a contiguous arrangement of data, our deque will allow
+insertion and removal at one end, but only removal at the other. For convenience,
+we will refer to the removal-only end as the left end, and the other as the right.</p>
+
+<p>Your deque should be implemented as follows: The underlying data structure will
+be a C++ standard vector. Following the convention of the queue we discussed in
+class, you will allow the data to “float” in the vector, with the following
+difference: If, upon a removal, you discover that the contiguous block of data
+(whose size is, say, k)
+will “fit” in the first k positions of the vector, then you should resize down
+by making a new vector and copying the k pieces of data into that new vector
+using the <code>push_back</code> function. Additions to the structure can use the standard
+vector functions, and can only occur at the “right” side of the contiguous data (i.e.
+the position of largest index).
+(Note that in this implementation the structure is not “circular”–
+we do not wrap the data using the modulo of the array size.)</p>
+
+<h3 id="the-stack-class">The <code>Stack</code> Class<a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#the-stack-class" class="header-anchor"></a></h3>
+
+<p>You will write a class named <code>Stack</code> that works just like the stack you heard
+about in lecture, with the addition of the <code>peek()</code> function. It is declared in
+the given file <code>stack.h</code>. You will implement it in <code>stack.cpp</code>.</p>
+
+<p>Your <code>Stack</code> class must implement all of the methods mentioned in the
+given code. Please read the documentation
+in the header file to see what limitations we have placed on your
+<code>Stack</code> class and what the running times of each function should be.</p>
+
+<h3 id="the-queue-class">The <code>Queue</code> Class<a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#the-queue-class" class="header-anchor"></a></h3>
+
+<p>You will write a class named <code>Queue</code> that works just like the queue you heard
+about in lecture, with the addition of the <code>peek()</code> function. It is declared in
+the given file <code>queue.h</code>. You will implement it in <code>queue.cpp</code>.</p>
+
+<p>Your <code>Queue</code> class must implement all of the methods mentioned in the
+given code. Please read the documentation
+in the header file to see what limitations we have placed on
+your <code>Queue</code> class and what the running times of each function should be.</p>
+
+<h3 id="testing">Testing<a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#testing" class="header-anchor"></a></h3>
+
+<p>We have provided a file <code>testStackQueue.cpp</code> which includes a few (albeit
+trivial) test cases that your code should pass if it is correct. To compile
+this executable, type:</p>
+
+<pre><code class="language-bash hljs">make <span class="hljs-built_in">test</span>StackQueue
+</code></pre>
+
+<p>These test cases are deliberately insufficient. We encourage you to augment
+this file with additional test cases, using the provided ones as examples.
+In particular, we have not provided test cases for your <code>deque</code> class. You
+will want to add those yourself!</p>
+
+<h3 id="grading-information-for-part-1">Grading Information for Part 1<a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#grading-information-for-part-1" class="header-anchor"></a></h3>
+
+<p>The following files are used to grade the stack and queue classes:</p>
+
+<ul>
+<li><code>deque.cpp</code></li>
+<li><code>stack.cpp</code></li>
+<li><code>queue.cpp</code></li>
+<li><code>partners.txt</code></li>
+</ul>
+
+<p>All other files (including any testing files you create) will not be used for
+grading.</p>
+
+<h2 id="part-2-voronoi-diagrams">Part 2: Voronoi Diagrams<a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#part-2-voronoi-diagrams" class="header-anchor"></a></h2>
+
+<p>This part of the assignment is motivated by the following painting by Georges Seurat. It
+is a classic example of “pointillism,” wherein compact points of solid color are used to
+cover a region, revealing an image. Seurat’s most famous work, <em>A Sunday Afternoon on
+the Island of La Grande Jatte</em> is over two metres tall!</p>
+
+<figure class="inline-figure" style="text-align: center;">
+    
+    <img src="./PA 2 - CPSC221 2019W1_ Data Structures_files/SundayInThePark.jpg">
+    
+    
+</figure>
+
+<p>Zoom in on the picture here:
+<a href="https://www.artic.edu/artworks/27992/a-sunday-on-la-grande-jatte-1884">https://www.artic.edu/artworks/27992/a-sunday-on-la-grande-jatte-1884</a></p>
+
+<p>We will be simulating the pointillistic effect using a mathematical construct
+called a <a href="https://en.wikipedia.org/wiki/Voronoi_diagram">Voronoi Diagram</a>, based
+on points randomly selected from a photograph.</p>
+
+<p>The process for simulating the artistic effect begins with a photograph. Any one will do,
+but our examples will be based on this one:</p>
+
+<figure class="inline-figure" style="text-align: center;">
+    
+    <img src="./PA 2 - CPSC221 2019W1_ Data Structures_files/park.png">
+    
+    
+</figure>
+
+<p>The image below was created by sampling approximately 30 points (or “centers”) from
+the park image, and then coloring every point in the image the same color as its nearest
+center.</p>
+
+<figure class="inline-figure" style="text-align: center;">
+    
+    <img src="./PA 2 - CPSC221 2019W1_ Data Structures_files/bfssolidparkbig.png">
+    
+    
+</figure>
+
+<p>There are many different algorithms we could use to create this image, but the most
+efficient strategy is to do a breadth first (also known as level order) traversal
+from each center. That is, we fill level k for all the centers before we fill
+any center’s level k+1. The figure below illustrates the growth of the fill
+from each center:</p>
+
+<figure class="inline-figure" style="text-align: center;">
+    
+    <img src="./PA 2 - CPSC221 2019W1_ Data Structures_files/bfssolidparkbig.gif">
+    
+    
+</figure>
+
+<p>The technique we’re using to partition the image is very similar to a classic
+<a href="https://en.wikipedia.org/wiki/Flood_fill">flood fill</a> algorithm, run from
+several points simultaneously. A center’s fill simply stops when it runs into
+any region of the image that has already been colored.</p>
+
+<p>For this part of the assignment, you will be writing a number of functions that
+execute a space partitioning fill on a <code>PNG</code> image. The Voronoi Diagram is achieved
+when we use a breadth first approach, but we could also use a depth first approach.
+In addition, instead of filling the partitions with a solid color, we can add
+simple patterns or textures to the fill regions.
+We will implement two different fill algorithms (breadth and depth) and three different
+fill patterns, described below.</p>
+
+<p>Finally, here is our final artistic result!! A denser sample of points from
+the original park image gives:</p>
+
+<figure class="inline-figure" style="text-align: center;">
+    
+    <img src="./PA 2 - CPSC221 2019W1_ Data Structures_files/bfssolidpark.png">
+    
+    
+</figure>
+
+<p>The depth-first version of the same fill texture, yields:</p>
+
+<figure class="inline-figure" style="text-align: center;">
+    
+    <img src="./PA 2 - CPSC221 2019W1_ Data Structures_files/dfssolidpark.png">
+    
+    
+</figure>
+
+<p>Here they are, animated!</p>
+
+<figure class="inline-figure" style="text-align: center;">
+    
+    <img src="./PA 2 - CPSC221 2019W1_ Data Structures_files/bfssolidpark.gif">
+    
+    
+</figure>
+<figure class="inline-figure" style="text-align: center;">
+    
+    <img src="./PA 2 - CPSC221 2019W1_ Data Structures_files/dfssolidpark.gif">
+    
+    
+</figure>
+
+<h3 id="functors">Functors<a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#functors" class="header-anchor"></a></h3>
+
+<p>Your first task in <em>this</em> part of the project is to implement the mechanism by
+which colors are selected for the fill pattern. To do this, you will create
+function objects (or “<a href="https://en.wikipedia.org/wiki/Function_object">functors</a>”) which will be passed into the fill algorithm
+and applied to pixels in a <code>PNG</code>. Specifically you will be making two new
+functors, each of which will be derived classes of the abstract base class
+called <code>colorPicker</code>, which is provided and described in the given code file
+<code>colorPicker.h</code>. We have also given you an example functor so you
+can see how things are supposed to work. Our functor is called
+<code>dotColorPicker</code>. The <code>colorPicker</code> base class
+has one purely virtual function that you <strong>must</strong> implement in your
+derived classes, but you may add
+others if you wish. In particular, you should expect your derived class
+constructors to initialize the functor with situation-dependent variables.</p>
+
+<p>The purpose of any <code>colorPicker</code> is to take an image point containing its <code>(x,y)</code>
+coordinates as a parameter to <code>operator()</code>, and to return the color that point
+p should be in the fill.
+So in the examples above, the
+<code>colorPicker</code> is simply returning the color of the nearest center.</p>
+
+<p>Your task is to implement the <code>solidColorPicker</code>,  <code>fadeColorPicker</code>, and <code>customColorPicker</code>
+function objects. Refer to the given code for implementation details: they
+<strong>must</strong> overwrite the abstract <strong>operator()</strong>!</p>
+
+<ul>
+<li><p><strong><code>solidColorPicker</code></strong> The first pattern will be a solid color the same as the point’s
+center. Its behavior is
+described in the given code, and sample images are given in soln_images.</p></li>
+
+<li><p><strong><code>fadeColorPicker</code></strong> The second fill pattern will fade to black as the points
+get farther from the center. Again, the specification is
+described in the given code.</p></li>
+
+<li><p><strong><code>customColorPicker</code></strong> The third exercise will be a fill pattern of your own creation!! You must create files
+<code>customColorPicker.h</code> and <code>customColorPicker.cpp</code> to change the pixels in the fill
+using some interesting pattern you design. You’ll also give us the <code>.gif</code>
+images created by your custom work. Note that we’ll leave it to you to figure out
+how to change your <code>Makefile</code>, <code>vor.h</code>, and <code>vor.cpp</code> to accommdate the new
+color picker.</p></li>
+</ul>
+
+<h3 id="the-fill-algorithms">The Fill Algorithms<a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#the-fill-algorithms" class="header-anchor"></a></h3>
+
+<p>The animations in the .gif images above are the result of
+<strong>breadth-first-search</strong> (BFS) and <strong>depth-first-search</strong> (DFS), respectively, both with a solid
+fill. We have given you the dot fill functions as an example for the others.</p>
+
+<p>You will be implementing both DFS and BFS, each with the
+three different fill <code>patterns</code> described above.</p>
+
+<p>You must implement <strong>all</strong> of the functions inside the <code>filler</code>
+namespace. Refer to the documentation in the header file for implementation details.</p>
+
+<h3 id="testing-1">Testing<a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#testing-1" class="header-anchor"></a></h3>
+
+<div class="alert alert-warning">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"></path></svg>
+    <strong>ImageMagick</strong>
+<p>Note that you must have ImageMagick installed if you’re developing on your
+personal machine. You can test for this requirement by running</p>
+
+<pre><code class="language-bash hljs">convert
+</code></pre>
+
+<p>in your terminal. Windows users should visit
+<a href="http://www.imagemagick.org/script/binary-releases.php">ImageMagick</a> to
+download the latest binary. OSX users can use homebrew or MacPorts to install
+it if missing. Linux users likely already have it installed. If not, then you
+can install it via your system’s package manager.</p>
+
+</div>
+
+<p>We have provided a file <code>testFills.cpp</code> which includes several test cases that
+your code should pass if it is correct. To compile this executable, type:</p>
+
+<pre><code class="language-bash hljs">make <span class="hljs-built_in">test</span>Fills
+</code></pre>
+
+<p>This will create executable <code>testFills</code>.</p>
+
+<p>One important thing to note about this PA is that the <code>.gif</code> compression may
+take some time. In general, on the remote machines via <code>ssh</code>,
+the solution code runs in somewhere around 45 seconds when all the tests are
+enabled and completed and the server is under a light load. It is advisable to
+comment out the tests for things you have already completed, so that you don’t
+have to wait as long (and use the CPU up) for things you already did. That
+said, the main point is that if you code doesn’t finish immediately don’t fret.
+Also note that as more traffic is happening on the server things will slow
+down. This may be an incentive to not wait until the last minute and have to
+try to run your code when everyone else is too!</p>
+
+<p>The <code>testFills</code> program will generate images and animated gifs in the <code>images/</code>
+folder, which can be diffed with the solution images in <code>soln_images/</code>. For
+animated gifs, the frames making up the animation are placed in <code>frames/</code>, and
+can be diffed with their corresponding expected frames in <code>soln_frames/</code>.</p>
+
+<p>You can check your color picker outputs by redirecting <code>testFills</code>’ output to a
+file and <code>diff</code>ing that with our solution output:</p>
+
+<pre><code class="language-bash hljs">./<span class="hljs-built_in">test</span>Fills &gt; <span class="hljs-built_in">test</span>Fills.out
+diff <span class="hljs-built_in">test</span>Fills.out soln_<span class="hljs-built_in">test</span>Fills.out
+</code></pre>
+
+<p>You can also diff each frame created for the animation, which will probably be
+useful for debugging:</p>
+
+<pre><code class="language-bash hljs">diff frames/bfssolid00.png soln_frames/bfssolid00.png
+</code></pre>
+
+<p>These test cases are deliberately insufficient. We encourage you to augment
+this file with additional test cases, using the provided ones as examples.</p>
+
+<h2 id="handing-in-your-code">Handing in Your Code<a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#handing-in-your-code" class="header-anchor"></a></h2>
+
+<p>To facilitate anonymous grading, <strong>do not</strong> include any personally-identifiable
+information in any of your source
+files. Instead, before you hand in this assignment, create a file called
+<code>partners.txt</code> that contains only the CSIDs of people in your collaboration
+group (if it exists), one per line. If you worked alone, include only your own
+CSID in this file. We will be automatically processing this information, so do
+not include anything else in the file. If we must manually correct your
+submission, you may lose points. As always, if you’re working in a group, each
+group member must hand in the assignment. Failure to cite collaborators
+violates our academic integrity policy; we will be aggressively pursuing such
+violators.</p>
+
+<p>You will submit your work to <a href="https://www.gradescope.com/courses/57891">https://www.gradescope.com/courses/57891</a> as you did for PA1.</p>
+
+<h2 id="grading-information">Grading Information<a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#grading-information" class="header-anchor"></a></h2>
+
+<p>The following files are used to grade PA 2:</p>
+
+<ul>
+<li><code>deque.cpp</code></li>
+<li><code>stack.cpp</code></li>
+<li><code>queue.cpp</code></li>
+<li><code>solidColorPicker.cpp</code></li>
+<li><code>solidColorPicker.h</code></li>
+<li><code>fadeColorPicker.cpp</code></li>
+<li><code>fadeColorPicker.h</code></li>
+<li><code>customColorPicker.cpp</code></li>
+<li><code>customColorPicker.h</code></li>
+<li><code>vor.h</code></li>
+<li><code>vor.cpp</code></li>
+<li><code>customDFS.gif</code></li>
+<li><code>customBFS.gif</code></li>
+<li><code>partners.txt</code></li>
+</ul>
+
+<p>(Note that all evidence of your custom color picker should be removed from your
+vor.h and vor.cpp before you hand in your code to the autograder. )</p>
+
+<p>All other files will not be used for grading.</p>
+
+<h2 id="good-luck">Good luck!<a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/mps/p2/#good-luck" class="header-anchor"></a></h2>
+
+
+    </div>
+</div>
+
+<div class="pure-g" id="footer">
+    <div class="pure-u-1 footer-links">
+        <ul>
+            
+            <li><a href="https://piazza.com/class/jzixhbm48yt3lq">Piazza</a></li><li><a href="https://www.students.cs.ubc.ca/~cs-221/2019W1/calendar/">Calendar</a></li>
+        </ul>
+    </div>
+    <div class="pure-u-1 footer-copyright">
+        <p>© 2019. All rights reserved. </p>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="./PA 2 - CPSC221 2019W1_ Data Structures_files/jquery-2.1.3.min.js.download"></script>
+<script type="text/javascript" src="./PA 2 - CPSC221 2019W1_ Data Structures_files/MathJax.js.download"></script>
+<script type="text/javascript" src="./PA 2 - CPSC221 2019W1_ Data Structures_files/toc.js.download"></script>
+<script type="text/javascript" src="./PA 2 - CPSC221 2019W1_ Data Structures_files/graph-load.js.download"></script>
+<script type="text/javascript" src="./PA 2 - CPSC221 2019W1_ Data Structures_files/menu.js.download"></script>
+<script type="text/javascript" src="./PA 2 - CPSC221 2019W1_ Data Structures_files/highlight.min.js.download"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    
+
+
+</body></html>
